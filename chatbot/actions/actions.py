@@ -312,7 +312,7 @@ class ActionIntoShowCarousel(Action):
                          "title": "Weight Loss",
                          "subtitle": "Shed Pounds, Gain Confidence",
                         #  "image_url": "https://qph.cf2.quoracdn.net/main-qimg-f7b477c863d72cfc16624b231ed16763-lq",
-                         "image_url": "Chatbot image\weight loss.jpg",
+                         "image_url": "Chatbot image\Weight losss.jpg",
                          "buttons":[
                              {
                                "title": "Buy Plans",
