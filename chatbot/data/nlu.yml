@@ -1,0 +1,2127 @@
+version: "3.1"
+
+nlu:
+
+# for greeting 
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: greets
+  examples: |
+    - user details 
+    - user data
+    - contact details
+
+
+# for goodbye
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+# bot challenge when user ask below question
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+# user ask different question relate to other categories , it means model are not train for this type of question 
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - What is 2 + 2?
+    - Who's the US President?
+    - 3
+    - What's the weather like today?
+    - Can you play music for me?
+    - What time is it in New York?
+    - What's the capital of France?
+    - Can you tell me a joke?
+    - How many continents are there?
+    - What is the meaning of life?
+    - Can you translate this for me?
+    - What's the latest news?
+    - What's the stock market doing today?
+    - Can you recommend a movie?
+    - Who invented the light bulb?
+    - Can you help me with my homework?
+    - How far is the moon?
+    - Can you find me a job?
+    - How do you make a pizza?
+    - What's the population of China?
+    - Who painted the Mona Lisa?
+    - What's the best way to learn a language?
+    - Can you lend me some money?
+    - How do you start a business?
+    - What's the fastest car in the world?
+    - How do you cook spaghetti?
+    - What's the tallest building in the world?
+    - Can you give me directions to the beach?
+    - How do you write a resume?
+    - Can you solve this math problem?
+    - What's the most popular book?
+    - How do you fix a computer?
+    - What's the best smartphone?
+    - How do you meditate?
+    - What's the most visited website?
+    - What's the price of Bitcoin?
+    - How do you invest in stocks?
+    - ¿Cuál es la capital de España?
+    - 42 is the answer to what?
+    - What does "Lorem ipsum" mean?
+    - 😃 Can you understand emojis?
+    - How do I get to the nearest ATM?
+    - @ What is your email address?
+    - Can you *bold* text?
+    - How do you use #hashtags?
+    - Is $5 a good?
+    - What does % mean?
+    - How do you find π?
+    - Can you help with HTML & CSS?
+    - What is C++ used for?
+    - Where is the shift key on a keyboard?
+    - Can you do @mentions?
+    - What is the use of & symbol?
+    - Can you write "Hello, World!" in different languages?
+    - How to make a newline \n in a string?
+    - What is the meaning of ~?
+    - Explain the use of ^ caret.
+    - How do you escape characters in JSON?
+    - What is the | (pipe) symbol used for?
+    - Can you find <  on a keyboard?
+
+
+# show carousel   
+# - intent: product_list
+#   examples: |
+#     - I want to buy vegan food meals
+#     - buy now vegan plans for me
+#     - brought vegan meals
+
+- intent: product_list
+  examples: |
+    - I want to buy vegan food meals
+    - buy now vegan plans for me
+    - brought vegan meals
+    - Where can I buy vegan meal plans?
+    - How to order vegan meal plans?
+    - Best place to buy vegan packages?
+    - Where to purchase vegan plans?
+    - How to buy vegan food plans?
+    - Where to get vegan meal packages?
+    - How to find vegan meal plans?
+    - Where to shop for vegan plans?
+    - How can I order vegan packages?
+    - Vegan meal plans purchase options?
+    - Where can I find vegan plans?
+    - How to get vegan plans delivered?
+    - Best sites for vegan meal plans?
+    - Vegan food plan buying guide?
+    - How to subscribe to vegan plans?
+    - Top vegan diet plans to buy?
+    - Where to purchase vegan diet plans?
+    - How to buy vegan diet packages?
+    - Best vegan diet plans to purchase?
+    - Vegan diet plans for purchase?
+    - How to purchase vegan diet packages?
+    - Top vegan meal plans to buy?
+    - Vegan meal packages for purchase?
+    - Buy vegan diet plans online?
+    - Purchase vegan meal packages?
+    - how can purchase
+    - how can buy vegan product
+    - vegan product
+
+
+# for use buy our plans
+- intent: buynow
+  examples: |
+    - I want to Buy
+    - Buy now 
+    - Buy
+    - Buy it
+
+
+# check contact details
+- intent: contact_details
+  examples: |
+    - I want to contact you
+    - How can I contact you?
+    - What are your contact details?
+    - Can you provide your contact information?
+    - I need your contact details
+    - How can I get a vegan diet?
+    - How do I reach out to your dietitian?
+    - Can I get the contact number for your dietitian?
+    - What's the best way to contact your dietitian?
+    - How do I book an appointment with your dietitian?
+    - Can you share the email address of your dietitian?
+    - How do I get in touch with your dietitian?
+    - I need to speak to your dietitian
+    - Can I have the contact info for your dietitian?
+    - How can I contact your dietitian for advice?
+    - Where can I find your dietitian's contact details?
+    - Could you give me your dietitian's phone number?
+    - I'd like to schedule a consultation with your dietitian
+    - How can I contact your dietitian for a consultation?
+    - Can you provide the contact details for your dietitian?
+    - What's the contact information for your dietitian?
+    - How do I arrange a meeting with your dietitian?
+    - I want to get in touch with your dietitian
+    - Can you tell me how to contact your dietitian?
+    - What's the email for your dietitian?
+    - Where can I find the contact info for your dietitian?
+    - How do I schedule a session with your dietitian?
+    - I need to contact your dietitian for a diet plan
+    - Can I get the details to contact your dietitian?
+    - What's the best way tho reach your dietitian?
+    - How can I talk to your dietitian?
+    - contact
+    - help number
+    - support team contact details
+    
+# about chatbot details    
+- intent: about_chatbot
+  examples: |
+    - about chatbot reference
+    - ow to use chatbot
+    - chatbot
+
+# when user ask regading to plans  ( show categeories)
+- intent: request_vegan_food_information
+  examples: |
+    - I want to know more about vegan food
+    - Can you provide details about vegan meals?
+    - Tell me about vegan food options
+    - What are the different types of vegan dishes available?
+    - Explain vegan diets to me
+    - Give me information on vegan food
+    - Do you offer vegan meal plans?
+    - Can you show me vegan food packages?
+    - What are your vegan meal options?
+    - I'm interested in vegan meal subscriptions
+    - Show me your vegan food plans
+    - Are there any vegan meal delivery services available?
+
+# show vegan options
+- intent: vegan_option
+  examples: |
+    - show me vegan diet option
+    - tell me best vegan option 
+    - vegan meal option
+    - vegan food option
+    - vegan product option
+
+# categories      
+- intent: select_family
+  examples: |
+    - Show me family diet plans
+    - Family options
+
+- intent: select_personal
+  examples: |
+    - Show me personal diet plans
+    - Personal options
+
+- intent: select_corporate
+  examples: |
+    - Show me corporate diet plans
+    - Corporate options
+
+- intent: two_member
+  examples: |
+    - Two 
+    - two member
+
+- intent: four_member
+  examples: |
+    - Four 
+    - Four member
+    - four
+
+- intent: six_member
+  examples: |
+    - SIX
+    - Six member
+
+- intent: more_member
+  examples: |
+    - More Member 
+    - six more than
+
+# for Corporate sub categories 
+- intent: employee_one_to_ten
+  examples: |
+    - size one to ten 
+    - ten
+
+- intent: employee_one_to_twentyfive
+  examples: |
+    - size one to twentyfive
+    - twentyfive
+    
+- intent: employee_one_to_fifty
+  examples: |
+    - size one to fifty
+    - fifty
+
+- intent: employee_more_than_fifty
+  examples: |
+    - size more than fifty
+    - maximum employees
+
+
+# for videos
+- intent: show_video
+  examples: |
+    - What video
+    - shoe video
+    - video
+    - about video
+
+# Question Relate to food categories (User understand and get some Important information relate to Veganism )
+- intent: vegan
+  examples: |
+    - What's vegan?
+    - vegan?
+    - Define vegan.
+    - Vegan meaning?
+    - Explain vegan.
+    - What's a vegan?
+    - Vegan definition?
+    - Meaning of vegan?
+    - Explain veganism briefly.
+    - Define being vegan.
+    - What is vegan?
+    - Define vegan.
+    - What does vegan mean?
+    - Can you explain veganism?
+    - What exactly is a vegan?
+    - What's the definition of vegan?
+    - Could you briefly explain veganism?
+    - Define being vegan
+    - Can you define the term "vegan" for me?
+    - Could you explain what being vegan entails?
+    - What's the definition of a vegan?
+    - Can you briefly explain the concept of veganism?
+    - What does it mean to be a vegan?
+    - What does it mean for something to be vegan?
+    - i want know about vegan
+    - more about veganism
+    - want to more about vegan
+    - Tell me more about veganism
+    - I want to learn more about vegan
+    - need to know about vegan
+    - i want to know about vegan
+    -
+
+
+- intent: vegan_eats
+  examples: |
+    - What exactly does a vegan eat?
+    - What can vegans eat?
+    - What's vegan food?
+    - Vegan meal ideas?
+    - What do vegans eat?
+    - Food for vegans?
+    - vegan eat
+    - What is vegan food?
+    - What do vegans typically eat?
+    - Can you provide examples of vegan-friendly foods?
+    - What constitutes vegan food?
+    - Any ideas for vegan meals?
+    - What are some common dishes in vegan cuisine?
+    - What ingredients are commonly used in vegan cooking?
+    - What are some examples of vegan dishes?
+
+- intent: Veganism
+  examples: |
+    - What is the idea behind veganism?
+    - Veganism
+    - What is veganism?
+    - Veganism: Why?
+    - What's the concept of veganism?
+    - What drives veganism?
+    - What's behind veganism?
+    - What's the rationale for veganism?
+    -	What exactly is veganism?
+    -	What is the idea behind veganism?
+
+
+
+
+- intent: first_vegen_term
+  examples: |
+    - Who invented the term vegan?
+    - father of vegan
+    - first person of vegan
+    - who generated vegan
+    - Who introduced the term vegan
+
+- intent: first_vegan
+  examples: |
+    - Who initiated veganism
+    - Who pioneered vegan lifestyle
+    - Originator of veganism
+    - First advocate of veganism
+    - Who first embraced vegan diet
+    - Who first promoted veganism
+    - First word of vegan
+
+- intent: vegan_expensive
+  examples: |
+    - Vegan expensive
+    - Vegan cost
+    - Pricey vegan
+    - Is veganism costly
+    - How costly is veganism
+    - Are vegan foods pricey
+    - Are vegan groceries more expensive?
+    - How do vegan prices compare?
+    - Is veganism costly or affordable?
+    - Veganism high price tag?
+    - Price difference between vegan and non-vegan?
+    - Is the vegan lifestyle expensive or economical?
+    - Is veganism budget-friendly or not?
+    - Is veganism worth the cost?
+    - Comparative cost of vegan vs. non-vegan?
+    - Are vegan options affordable?
+    - Expense of maintaining a vegan diet?
+    - Is veganism economically feasible?
+    - What are the financial implications of veganism?
+    - What impact does veganism have on your wallet?
+    - Are vegan alternatives wallet-friendly?
+
+- intent: vegan_food
+  examples: |
+    - Vegan foods
+    - Plant-based diet?
+    - No animal products
+    - Name vegan-friendly food items.
+    - Identify vegan edibles
+    - Eat 
+    - vegan eat
+    - vegan food eat
+    - food eat
+    - What is a vegan diet?
+    - what was a vegan diet?
+    - what will  vegan diet
+
+- intent: vegetarian_and_vegan
+  examples: |
+    - Veg or vegan
+    - vegetarian or vegan
+    - vegetarian and vegan
+    - difference between vegetarian and vegan
+    - what difference between vegetarian and vegan?
+    - differ vegetarian and vegan?
+    - What is the difference between vegetarian and vegan?
+    -	Can you explain the distinction between vegetarianism and veganism?
+    -	What are the main differences between being vegetarian and being vegan?
+    - What's the contrast between vegetarian or vegan?
+    - What's the distinction between vegetarian and vegan diets?
+    - Are there any similarities between vegetarianism and veganism?
+
+- intent: benefit_of_vegan
+  examples: |
+    - Why go vegan
+    - Benefits of veganism
+    - Vegan advantages
+    - Is veganism healthy
+    - Popular vegan reasons
+    - Advantages of going vegan?
+    - Reasons to choose vegan
+    - What benefits come with vegan lifestyle
+    - How does veganism benefit health
+    -	What are the benefits of adopting a vegan lifestyle?
+    - Why should one consider going vegan?
+    - What advantages does veganism offer?
+    - Is veganism a healthy choice? 
+    -	What are some popular reasons for choosing a vegan diet?
+    -	What are the advantages of going vegan?
+    - Why opt for a vegan lifestyle?
+    - What benefits accompany a vegan lifestyle?
+    - How does veganism contribute to better health?
+
+- intent: almond_milk
+  examples: |
+    - almond milk vegan?
+    - Best vegan milk?
+    - Vegan milk options
+    - Is almond milk healthy
+    - Almond milk 
+    - Is almond milk vegan-friendly?
+    -	Is almond milk vegan?
+    - Is almond milk suitable for people with lactose intolerance?
+    - How is almond milk made?
+    - What are the benefits of drinking almond milk?
+    - Can almond milk be used as a substitute for cow's milk in cooking and baking?
+    - Are there any concerns about allergens in almond milk?
+    - What are the different flavors of almond milk available?
+    - How does the nutritional value of almond milk compare to other types of milk?
+
+- intent: honey
+  examples: |
+    - Why Honey
+    - honey
+    - honey vegan
+    - honey is vegan
+    -	What are the health benefits of honey?
+    - Is honey suitable for vegans?
+
+- intent: why_go_vegan
+  examples: |
+    - Top vegan benefits
+    - Why go vegan
+    - Veganism popular
+    - "Veganism healthy
+    - Have you explored veganism
+    - go to vegan
+    - why buy vegan
+    - why use vegan
+    - why i go for vegan
+    -	What are the top benefits of adopting a vegan lifestyle?
+    - What are the reasons behind choosing to go vegan?
+    - Why is veganism becoming increasingly popular?
+    - Is veganism truly a healthy choice for individuals?
+    - Have you considered exploring the principles of veganism?
+    - What motivates individuals to transition to a vegan diet?
+    - Why should consumers opt to buy vegan products?
+    - What are the advantages of using vegan alternatives?
+    - vegan benefits
+    - tell me benefits about vegan
+    - can i know about veganism benefits
+    - what are the benefits of veganism
+    - why veganism is good
+    - why veganism is important
+
+
+
+- intent: Opposite_veganism
+  examples: |
+    - Opposite of being vegan?
+    - What's the reverse of veganism?
+    - What's the polar opposite of vegan?
+    - What's the non-vegan lifestyle
+    - What is the reverse of veganism?
+    - What stands in stark contrast to veganism?
+    - What ideology opposes veganism?
+    - What lifestyle contradicts veganism?
+    - What is the antithesis of veganism?
+    - What lifestyle diametrically opposes vegan values?
+    - What's the counterpoint to veganism?
+    - What is the non-vegan dietary approach?
+    - What lifestyle philosophy contradicts vegan principles?
+    - What ideology stands in direct opposition to veganism?
+    - What dietary lifestyle is contrary to veganism?
+    - What is the opposite of veganism
+    - what is the opposite of being vegan
+
+    
+
+- intent: Veganism_healthy
+  examples: |
+    - Vegan health
+    - Veganism benefits
+    - Healthy vegan
+    - Is veganism good
+    - Is veganism good for health
+    - Healthy to go vegan
+    - Health benefits of veganism
+    - Veganism and well-being
+    - Health effects of veganism
+    - How does veganism affect health?
+    - What are the health benefits of a vegan diet?
+    - Is it healthy to be vegan?
+    - How does veganism contribute to overall well-being?
+    - What are the potential health effects of adopting a vegan lifestyle?
+    - Can veganism support a healthy lifestyle?
+    - What health advantages does veganism offer?
+    - How does a vegan diet impact physical health?
+    - Are there any risks to health associated with veganism?
+    - vegan diet is healthy 
+
+- intent: Food_taste_good
+  examples: |
+    - Vegan taste
+    - Vegan yum
+    - Vegan flavors
+    - Vegan delicious
+    - Taste good 
+    - Like vegan flavors
+    - Find vegan food tasty
+    - Think vegan dishes delicious
+    - Does this dish have vegan options?
+    - Are there any vegan alternatives available?
+    - How does this taste for vegetarians?
+    - Can you recommend any vegan-friendly options?
+    - What vegan flavors do you offer?
+    - Are there any vegan dishes that taste particularly good?
+    - Which vegan meals do you find delicious?
+    - Do you have any recommendations for tasty vegan food?
+    - vegan teste is good
+    - vegan food is delicious
+    - vegan food is tasty
+    - vegan food is yummy
+    - vegan food is flavorful
+
+
+- intent: protein
+  examples: |
+    - Vegan protein enough
+    - Vegans protein intake
+    - vegan protein?
+    - Enough protein vegans
+    - Vegan protein sufficient
+    - Enough protein in vegan diet
+    - Vegans sufficient protein intake
+    - Is vegan protein sufficient for meeting daily dietary needs?
+    - How much protein should vegans consume daily?
+    - Are there any concerns about protein intake for vegans?
+    - Can vegans get enough protein from plant-based sources?
+    - Is the protein in a vegan diet adequate for meeting nutritional requirements?
+    - What are some ways to ensure vegans have sufficient protein intake?
+    - How can vegans ensure they're getting enough protein in their diet?
+
+# Question Relate to food categories (User understand and get some Important information relate to Veganism )
+- intent: Soy_products
+  examples: |
+    - Are soy products nutritious
+    - Do soy products promote health
+    - Are soy foods good for you
+    - Are soy products beneficial
+    - Do soy products support wellness
+    - Are soy-based foods healthy
+    - soy food
+    - soy healthy
+    - Are soy products suitable for vegetarians and vegans?
+    - Can soy products help with cholesterol levels?
+    - Do soy products contain complete proteins?
+    - Are soy products safe for children to consume?
+    - Are there any potential risks associated with consuming soy products?
+    - Can soy products aid in weight management?
+    - Do soy products help with menopausal symptoms?
+    - Are fermented soy products more beneficial than non-fermented ones?
+    - Can soy products be part of a balanced diet?
+    - Are soy products environmentally sustainable?
+
+- intent: fish_and_eggs
+  examples: |
+    - Do vegans consume fish or eggs?
+    - Are fish and eggs part of a vegan diet?
+    - Can vegans eat fish or eggs?
+    - Do fish and eggs align with veganism?
+    - Are fish and eggs included in vegan meals?
+    - Are fish and eggs off-limits for vegans?
+    - Do vegans avoid consuming fish and eggs?
+    - fish food
+    - eggs food
+    - fish and eggs
+    - Are fish and eggs considered vegetarian foods?
+    - Can vegetarians consume fish or eggs?
+    - Do vegetarians include fish and eggs in their diet?
+    - Are fish and eggs commonly eaten by vegetarians?
+    - Do vegetarians avoid consuming fish and eggs?
+    - Are fish and eggs part of a vegetarian meal plan?
+    - Is fish a protein source for vegetarians?
+    - Can vegetarians eat eggs as a protein source?
+    - How do vegetarians incorporate fish and eggs into their diet?
+
+- intent: iron_and_calcium
+  examples: |
+    - Sufficient iron, calcium minus meat
+    - Iron, calcium without animal foods
+    - Enough iron, calcium, no animal
+    - Animal-free iron, calcium enough
+    - Iron, calcium possible without animals
+    - Meet iron, calcium sans animal products
+    - Achieve iron, calcium without meat
+    - iron and calcium
+    - iron and calcium vegan
+    - can i get iron and calcium from vegan 
+    
+    
+
+- intent: 100_percent_vegan_person
+  examples: |
+    - Full vegan possible
+    - Complete veganism realistic
+    - 100% vegan achievable
+    - Total vegan lifestyle
+    - Feasible veganism entirely
+    - full vegan
+    - 100% vegan
+    - Is 100% veganism possible?
+    - Achieve total vegan lifestyle?
+    - Can anyone be fully vegan?
+    - Can I become a 100% vegan person?
+    - Is it possible to maintain a 100% vegan lifestyle?
+    - How feasible is it to be completely vegan?
+    - Can one realistically achieve full veganism?
+    - Is 100% veganism achievable for everyone?
+    - What does a total vegan lifestyle entail?
+    - Are there practical ways to live as a full vegan?
+    - Can anyone successfully adopt a 100% vegan diet and lifestyle?
+    - Is it realistic to pursue complete veganism?
+    - What steps can one take to achieve a fully vegan lifestyle?
+    - Is it possible for everyone to be fully vegan?
+
+- intent: Beauty_products
+  examples: |
+    - Are vegan beauty items as efficient?
+    - Do vegan products work well?
+    - Can vegan beauty be effective?
+    - Are non-vegan options better?
+    - Do vegan alternatives perform adequately?
+    - Is efficacy comparable in vegan products?
+    - How does vegan beauty compare?
+    - Are non-vegan items more effective?
+    - What are the benefits of using vegan beauty products?
+    - Are there any drawbacks to using vegan beauty items?
+    - Can you list some popular vegan beauty brands?
+    - Are there any specific ingredients to watch out for in vegan cosmetics?
+    - How do I know if a beauty product is truly vegan?
+    - Are there any trends in vegan beauty products?
+    - Are vegan beauty products suitable for all ages?
+    - Are vegan beauty products environmentally friendly?
+
+- intent: avoid_ingredients_beauty
+  examples: |
+    - What to steer clear of in vegan beauty items?
+    - Ingredients to avoid in vegan cosmetics?
+    - Which components to dodge in vegan skincare?
+    - What not to include in cruelty-free beauty products?
+    - Key ingredients to skip in vegan makeup?
+    - Avoid in vegan skincare?
+    - Ingredients to dodge vegan?
+    - Vegan beauty red flags?
+    - What harmful ingredients to avoid in vegan skincare?
+    - Can you list common allergens in vegan cosmetics?
+    - Which chemicals are commonly found in non-vegan beauty products?
+    - Are there any harmful preservatives in vegan skincare?
+    - How to recognize synthetic fragrances in vegan makeup?
+    - Are there any animal-derived ingredients in cruelty-free beauty products?
+    - What to watch out for in vegan haircare products?
+    - Are there any known irritants in vegan cosmetics?
+
+- intent: Cruelty_free_beauty_product
+  examples: |
+    - How to guarantee vegan cosmetics?
+    - Tips for cruelty-free beauty buys?
+    - Ensuring vegan skincare?
+    - What to look for in cruelty-free makeup
+    - How can I confirm a product is vegan
+    - Criteria for cruelty-free beauty purchases
+    - Ensuring ethical cosmetics
+    - How to spot vegan beauty items
+    - Can you recommend vegan beauty certification labels?
+    - What organizations certify cruelty-free beauty products?
+    - Are there any apps to help identify cruelty-free cosmetics?
+    - How can I verify if a brand tests on animals?
+    - Are there any reliable websites for finding cruelty-free beauty products?
+    - Can you provide a checklist for purchasing cruelty-free makeup?
+    - How do I distinguish between vegan and non-vegan beauty products?
+    - Is there a cruelty-free logo to look for on packaging?
+
+- intent: skin_types_product
+  examples: |
+    - Are vegan beauty products appropriate for every skin type?
+    - Can all skin types use vegan beauty products?
+    - Vegan skincare suitable?
+    - Vegan skincare for all?
+    - Vegan beauty safe?
+    - Do vegan skincare items suit all skin types?
+    - Can individuals with any skin type use vegan beauty products?
+    - Do vegan skincare products cater to all skin types?
+    - Can individuals with any skin type use vegan beauty products?
+    - Do vegan skincare products cater to all skin types?
+    - Is vegan makeup suitable for oily skin?
+    - Are there vegan options for dry skin?
+    - Can sensitive skin tolerate vegan cosmetics?
+    - Are vegan skincare products recommended for combination skin?
+    - Do vegan haircare products cater to different hair types?
+    - Are there vegan alternatives for acne-prone skin?
+    - Can mature skin benefit from vegan beauty products?
+    - Are there vegan options for individuals with eczema?
+
+- intent: Beauty_products_more_expensive
+  examples: |
+    - Are vegan beauty products more expensive?
+    - Do vegan cosmetics cost more?
+    - Are non-vegan options cheaper?
+    - Are vegan beauty items pricier?
+    - more expensive beauty product
+    - expensive beauty 
+    - Is there a price difference?
+    - Are non-vegan alternatives cheaper?
+    - Are vegan beauty products costly?
+    - Do non-vegan options save money?
+    - Is there a price difference between vegan and non-vegan beauty products?
+    - Are luxury brands more likely to offer vegan beauty products?
+    - Are there any budget-friendly vegan beauty brands?
+    - Can I find affordable vegan skincare products?
+    - Do vegan makeup options vary in price?
+    - Are there any discounts available for vegan cosmetics?
+    - How do the prices of vegan and non-vegan beauty products compare in the long run?
+    - Are there any hidden costs associated with using vegan beauty products?
+    - Are there any cost-saving strategies for purchasing vegan cosmetics?
+    - Are there any subscription services for vegan beauty products?
+
+    
+- intent: All_types_beauty_product
+  examples: |
+    - Are there vegan options for makeup?
+    - Can I replace skincare products with vegan alternatives?
+    - What are some vegan haircare options?
+    - Are all beauty products available in vegan versions?
+    - Can I find vegan substitutes for skincare?
+    - What vegan options exist for makeup?
+    - Are there vegan alternatives for haircare?
+    - Can I switch to vegan beauty products?
+    - Are there vegan options for nail polish?
+    - Can I find vegan sunscreen?
+    - Are there vegan perfumes available?
+    - Can I use vegan face masks?
+    - Do vegan deodorants exist?
+    - Are there vegan options for hair dye?
+    - Can I find vegan shaving cream?
+    - Are there vegan lip balms?
+    - Do vegan beauty products come in travel sizes?
+
+- intent: cloths_vegan
+  examples: |
+    - Can clothes be vegan?
+    - What exactly constitutes vegan clothing?
+    - Are all synthetic fabrics considered vegan?
+    - How can I determine if a garment is truly vegan?
+    - Are there any animal-derived materials commonly found in clothing?
+    - Can leather be vegan?
+    - What alternatives exist for leather in vegan fashion?
+    - Is wool vegan-friendly?
+    - Are there ethical concerns with conventional wool production?
+    - What are some sustainable alternatives to wool?
+    - Can silk be considered vegan?
+    - What are the vegan options for silk-like fabrics?
+    - Are there any unexpected sources of animal products in clothing?
+    - Is fur-ever considered vegan?
+    - How can I ensure my clothing choices align with my vegan values?
+    - Are there specific certifications or labels to look for when shopping for vegan clothing?
+    - What are some popular brands known for their vegan clothing lines?
+    - Can I find affordable vegan clothing options?
+    - How does vegan clothing contribute to sustainability?
+    - Are there any challenges or limitations to adopting a vegan wardrobe?
+
+
+
+- intent: fashion_vegan 
+  examples: |
+    - What is vegan fashion?
+    - What defines vegan fashion?
+    - How does vegan fashion differ from traditional fashion?
+    - Are there specific materials used in vegan fashion?
+    - What are some common alternatives to animal-derived materials in vegan fashion?
+    - Is vegan fashion sustainable?
+    - Can vegan fashion be high-quality and durable?
+    - Are there any notable vegan fashion designers or brands?
+    - How can I identify vegan fashion products while shopping?
+    - Is vegan fashion limited to clothing, or does it extend to accessories and footwear?
+    - Are there any certifications or labels that indicate a product is vegan-friendly?
+    - How does vegan fashion contribute to animal welfare and ethical consumption?
+    - Are there any cultural or societal factors influencing the growth of vegan fashion?
+    - Can vegan fashion be affordable?
+    - What are some misconceptions about vegan fashion?
+    - How does vegan fashion intersect with environmental conservation efforts?
+    - Are there any challenges or limitations in the production of vegan fashion?
+    - How can individuals incorporate vegan fashion into their style?
+    - What role does technology play in advancing vegan fashion?
+    - Are there any emerging trends within the vegan fashion industry?
+    - How can consumers support the growth of vegan fashion?
+
+
+
+- intent: clothing_materials_vegan
+  examples: |
+    - What materials are commonly used in vegan clothing?
+    - What are some common vegan alternatives to leather?
+    - Are there natural fibers used in vegan clothing?
+    - Which plant-based materials are popular in vegan fashion?
+    - Can you recommend vegan alternatives to wool?
+    - What are the benefits of choosing cotton-based vegan clothing?
+    - Are there any synthetic materials commonly used in vegan garments?
+    - How sustainable are bamboo-based fabrics in vegan clothing?
+    - What are the environmental impacts of using hemp in vegan fashion?
+    - Are there innovative materials used in eco-friendly vegan clothing?
+    - Which brands specialize in cruelty-free silk alternatives?
+    - Can you explain the process of creating vegan suede?
+    - What are the advantages of using recycled polyester in vegan clothing?
+    - Are there any concerns regarding microfiber pollution in vegan textiles?
+    - How do you ensure the durability of vegan materials in clothing?
+    - What are the best practices for caring for vegan leather?
+    - Are there any certifications to look for when purchasing vegan clothing?
+    - How do vegan materials compare in terms of breathability and comfort?
+
+
+
+
+- intent: vegan_and_non_vegan_clothing
+  examples: |
+    - Are vegan clothing items more expensive than non-vegan alternatives?
+    - Are vegan clothing items generally pricier than non-vegan options?
+    - Do vegan clothing brands tend to have higher price points compared to non-vegan counterparts?
+    - Are there cost differences between vegan and non-vegan clothing items?
+    - Is there a premium associated with purchasing vegan clothing?
+    - Do vegan materials typically cost more to produce, leading to higher prices?
+    - Are there economic reasons behind the perceived expense of vegan clothing?
+    - Are there any budget-friendly options within the realm of vegan clothing?
+    - How do the production costs of vegan fabrics compare to traditional materials?
+    - Are there any hidden costs associated with producing vegan clothing?
+    - Are there factors other than materials that contribute to the cost of vegan clothing?
+    - Do certain vegan clothing brands prioritize affordability?
+    - Are there ways to reduce the cost of transitioning to a vegan wardrobe?
+    - Are there instances where vegan clothing is actually cheaper than non-vegan alternatives?
+    - What role does branding play in the pricing of vegan clothing?
+    - Are there any long-term savings associated with choosing vegan clothing options?
+    - Are there differences in durability between vegan and non-vegan clothing?
+    - How do the environmental impacts of vegan materials factor into pricing?
+
+
+# - intent: Identity_vegan_clothing_brands
+#   examples: |
+#     - How can I identify vegan clothing brands and products?
+#     - What are the key characteristics of vegan clothing brands?
+#     - How can I determine if a clothing item is made from animal-derived materials?
+#     - Are there specific certifications or labels I should look for when seeking vegan clothing?
+#     - What are some common animal-derived materials used in clothing production?
+#     - How do I identify vegan alternatives to leather?
+#     - Are there any online resources or databases that list vegan clothing brands?
+#     - What steps can I take to verify the vegan status of a clothing brand?
+#     - How can I differentiate between synthetic and natural fibers in clothing?
+#     - Are there any particular brands known for their commitment to cruelty-free and vegan fashion?
+#     - What are some ethical considerations to keep in mind when shopping for vegan clothing?
+#     - How can I ensure that the dyes and processes used in clothing production are vegan-friendly?
+#     - Are there any specific keywords or phrases I should search for when looking for vegan clothing online?
+#     - Can I trust brands that claim to be vegan without official certification?
+#     - How can I support small or independent vegan clothing brands?
+#     - What are some alternative materials used in vegan clothing production?
+#     - How do I find vegan options for clothing items such as shoes and bags?
+
+
+
+
+- intent: vegan_clothing_option
+  examples: |
+    - What are some sustainable and eco-friendly options within vegan clothing?
+    - What materials are commonly used in sustainable vegan clothing?
+    - How can I ensure that the vegan clothing I purchase is ethically produced?
+    - Are there any certifications to look out for when buying eco-friendly vegan clothing?
+    - What are some eco-friendly alternatives to leather in vegan fashion?
+    - How does organic cotton compare to conventional cotton in terms of sustainability?
+    - Are there any vegan clothing brands that prioritize fair trade practices?
+    - What are the environmental benefits of choosing plant-based fibers over synthetic ones?
+    - Can you recommend some sustainable vegan options for activewear?
+    - How does bamboo fabric contribute to sustainable fashion?
+    - What are the pros and cons of recycled polyester in vegan clothing?
+    - Are there any sustainable options for vegan footwear?
+    - How does hemp fabric compare to other materials in terms of sustainability?
+    - What role do dyeing and printing methods play in eco-friendly vegan clothing?
+    - How can I dispose of old vegan clothing in an environmentally friendly way?
+    - Are there any vegan clothing rental services available for special occasions?
+    - Can you suggest some sustainable alternatives to traditional wool in vegan fashion?
+    - What are some innovative materials being used in eco-conscious vegan clothing?
+
+
+
+
+- intent: vegan_clothing_stylish
+  examples: |
+    - Can vegan clothing be stylish?
+    - Can vegan clothing be fashionable without compromising ethics?
+    - Are there trendy options available within the realm of vegan fashion?
+    - How can I find stylish vegan clothing brands?
+    - What are some popular materials used in creating stylish vegan clothing?
+    - Are there any high-end designers specializing in vegan fashion?
+    - Can vegan clothing keep up with current fashion trends?
+    - How do I style vegan clothing pieces for a chic look?
+    - Are there vegan alternatives to luxury leather goods that still look stylish?
+    - Can I find fashionable vegan shoes and accessories?
+    - Are there vegan options for formal wear that look sophisticated?
+    - How can I create a stylish capsule wardrobe using only vegan clothing?
+    - What are some tips for shopping sustainably within the realm of vegan fashion?
+    - Can vegan clothing be versatile enough for various occasions?
+    - Are there any vegan fashion influencers or bloggers I can follow for style inspiration?
+    - How do I differentiate between quality vegan clothing and cheaper alternatives?
+    - Can I find stylish vegan alternatives to wool and silk?
+    - Are there any emerging trends within the realm of vegan fashion?
+    - How can I incorporate vintage and thrifted vegan pieces into my wardrobe?
+
+
+
+
+
+# - intent: color_choices_in_vegan_clothing
+#   examples: |
+#     - Are there any limitations on color choices in vegan clothing?
+#     - Are there restrictions on using synthetic dyes in vegan clothing?
+#     - Can vegan clothing only be produced in certain colors due to ethical considerations?
+#     - What alternatives exist for achieving vibrant colors in vegan clothing?
+#     - Are there any limitations on the variety of shades available in vegan clothing?
+#     - Do natural dyes offer more color options than synthetic ones in vegan fashion?
+#     - Are there any concerns about the environmental impact of certain dye colors in vegan clothing?
+#     - Can vegan clothing manufacturers guarantee color consistency across different batches?
+#     - Are there regulations regarding the use of certain pigments in vegan apparel?
+#     - Do certain colors pose challenges in terms of sourcing vegan-friendly materials?
+#     - Are there any cultural or symbolic considerations affecting color choices in vegan fashion?
+#     - Can vegan clothing be customized in terms of color to meet individual preferences?
+#     - Are there any limitations on using certain printing techniques for adding color to vegan garments?
+#     - How do color choices in vegan clothing impact the overall aesthetics of the fashion industry?
+#     - Are there any trends in color preferences within the vegan fashion community?
+#     - Do certain colors require more resources or processes to achieve in vegan clothing production?
+#     - Are there any limitations on using recycled materials in specific colors for vegan apparel?
+#     - Do color preferences vary based on the target demographic for vegan clothing brands?
+
+
+
+- intent: type_of_vegan_clothing
+  examples: |
+    - Can I find vegan alternatives for all types of clothing items, including footwear and accessories?
+    - What are vegan clothing alternatives made of?
+    - Are vegan clothing items environmentally friendly?
+    - How do I identify vegan clothing?
+    - Can I find vegan alternatives for leather jackets?
+    - Are there vegan options for wool sweaters?
+    - What about vegan alternatives for silk scarves?
+    - Can I get vegan-friendly denim jeans?
+    - Where can I find vegan leather boots?
+    - Are there vegan substitutes for fur coats?
+    - How durable are vegan clothing items compared to traditional ones?
+    - What are some popular brands offering vegan clothing options?
+    - Do vegan clothing alternatives come in a variety of styles and colors?
+    - Are there vegan-friendly alternatives for cashmere sweaters?
+    - Can I find vegan options for down jackets?
+    - Are there vegan alternatives for suede shoes?
+    - How can I care for my vegan clothing items to ensure longevity?
+    - Do vegan clothing materials require special washing instructions?
+
+
+
+- intent: vegan_clothing_comforts
+  examples: |
+    - How do vegan clothing materials compare in terms of breathability and comfort?
+    - How does cotton, a common vegan clothing material, compare to traditional fabrics in terms of breathability?
+    - Are hemp garments as breathable and comfortable as those made from conventional materials?
+    - How do bamboo-based textiles fare in terms of breathability and comfort for vegan clothing?
+    - What about linen, another plant-based fabric, in terms of breathability compared to non-vegan alternatives?
+    - Are synthetic vegan fabrics like polyester and nylon as breathable and comfortable as natural fibers?
+    - Can you discuss the breathability and comfort of Tencel, a sustainable vegan fabric derived from wood pulp?
+    - How do microfiber vegan fabrics perform in terms of breathability and comfort during wear?
+    - Are there any vegan alternatives to wool that offer similar levels of breathability and comfort?
+    - What are the differences in breathability and comfort between organic cotton and conventional cotton for vegan clothing?
+    - Do eco-friendly vegan fabrics like modal and lyocell offer enhanced breathability and comfort?
+    - How does the breathability of pineapple leather compare to traditional leather in vegan fashion?
+    - Can you explain how cork fabric fares in terms of breathability and comfort for vegan accessories?
+    - Are there any innovative vegan materials that excel in breathability and comfort for activewear?
+    - How do recycled materials like PET bottles perform in terms of breathability and comfort for vegan clothing?
+    - Can you compare the breathability and comfort of vegan silk alternatives like peace silk and soy silk?
+
+
+
+# - intent: Instructions_for_vegan_clothing
+#   examples: |
+#     - Are there any specific care instructions for vegan clothing?
+#     - How should I wash my vegan clothing?
+#     - Can I machine wash my vegan leather jacket?
+#     - Are there any special considerations when washing faux fur?
+#     - What temperature should I use when washing my vegan suede items?
+#     - Can I use regular detergent on my vegan clothing?
+#     - Are there any eco-friendly detergents recommended for vegan fabrics?
+#     - How do I remove stains from my vegan clothing?
+#     - Can I iron my synthetic fabric garments?
+#     - Are there any specific drying instructions for vegan textiles?
+#     - Should I avoid using bleach on my vegan clothing?
+#     - How do I prevent pilling on my synthetic knitwear?
+#     - Are there any special care instructions for cork accessories?
+#     - Can I treat my vegan silk items like traditional silk?
+#     - How should I store my vegan leather goods to maintain their quality?
+#     - Are there any recommended methods for preserving the color of my vegan garments?
+#     - Can I use fabric softener on my vegan fabrics?
+#     - What should I do if my vegan clothing gets wet in the rain?
+
+
+
+- intent: potential_allergens_in_vegan_clothing
+  examples: |
+    - Are there any potential allergens in vegan clothing materials?
+    - Are synthetic fibers like polyester and nylon allergen-free in vegan clothing?
+    - Can natural materials such as hemp or bamboo cause allergic reactions in vegan clothing?
+    - Are there any potential allergens in the dyes used for vegan clothing?
+    - Can fabric softeners or treatments used in vegan textiles trigger allergies?
+    - Are there common allergens in the manufacturing process of vegan clothing?
+    - Do vegan leather alternatives pose any allergy risks?
+    - Can recycled materials used in vegan clothing contain allergens?
+    - Are there specific certifications to ensure vegan clothing is allergen-free?
+    - Do plant-based dyes used in vegan textiles cause allergic reactions?
+    - Can the adhesive used in vegan shoe production be allergenic?
+    - Are there allergens present in organic cotton used for vegan clothing?
+    - Can allergens be found in the sizing or finishing treatments of vegan fabrics?
+    - Are there any potential allergens in the fibers used for vegan wool substitutes?
+    - Can allergens be present in the packaging or storage of vegan clothing?
+    - Are there specific cleaning agents recommended for those with allergies to maintain vegan clothing?
+    - Can fragrances or perfumes applied to vegan garments trigger allergic reactions?
+
+
+
+
+# - intent: certifications_for_vegan_clothing
+#   examples: |
+#     - Are there any certifications for vegan clothing?
+#     - Are there certifications specifically for vegan clothing?
+#     - What are the most recognized certifications for vegan apparel?
+#     - How can I identify if a clothing item is truly vegan certified?
+#     - Are there global standards for certifying vegan clothing?
+#     - What organizations provide certification for vegan fashion?
+#     - Do vegan clothing certifications cover the entire production process?
+#     - Are there different levels of certification for vegan clothing?
+#     - Can clothing brands display multiple vegan certifications?
+#     - How can consumers verify the authenticity of vegan clothing certifications?
+#     - Are there any industry-specific regulations for certifying vegan apparel?
+#     - Do vegan clothing certifications also consider environmental sustainability?
+#     - Are there any emerging trends or new certifications in the vegan fashion industry?
+#     - Can small or independent clothing brands obtain vegan certifications?
+#     - Are there costs associated with obtaining and maintaining vegan clothing certifications?
+#     - How do vegan clothing certifications benefit both consumers and manufacturers?
+
+
+#add shoes
+- intent: ask_about_vegan_shoes
+  examples: |
+    - Are shoes vegan?
+    - Are vegan shoes durable like leather?
+    - How do I clean vegan shoes?
+    - Are vegan shoes eco-friendly?
+    - Can vegan shoes be recycled?
+    - Do vegan shoes come in different styles?
+    - Are vegan shoes comfortable?
+    - Are vegan shoes affordable?
+    - Where can I buy vegan shoes?
+    - Are vegan shoes waterproof?
+    - Do vegan shoes contain harmful chemicals?
+    - Are vegan shoes suitable for people with allergies?
+    - Can I find vegan shoes for formal occasions?
+    - Are vegan shoes suitable for sports?
+    - Do vegan shoes have good grip?
+    - Can vegan shoes be repaired?
+    - Are vegan shoes breathable?
+    - Are vegan shoes suitable for all seasons?
+    - Do vegan shoes contribute to animal welfare?
+    - Are vegan shoes fashionable?
+
+- intent: ask_about_materials_of_vegan_shoes
+  examples: |
+    - What are vegan shoes made of?
+    - What materials are commonly used to make vegan shoes?
+    - Are vegan shoes durable compared to leather shoes?
+    - Can vegan shoes be waterproof?
+    - How are vegan shoes different from traditional leather shoes?
+    - Are there any environmental benefits to wearing vegan shoes?
+    - Do vegan shoes come in a variety of styles?
+    - Are vegan shoes cruelty-free?
+    - Can vegan shoes be recycled at the end of their life?
+    - Do vegan shoes require any special care or maintenance?
+    - Are there vegan alternatives to popular leather shoe brands?
+    - Can vegan shoes be as comfortable as leather shoes?
+    - Are vegan shoes more affordable than leather shoes?
+    - Do vegan shoes come in different colors and designs?
+    - How can I find reputable brands that specialize in vegan shoes?
+    - Are there any specific certifications to look for when buying vegan shoes?
+    - Can vegan shoes be repaired if they get damaged?
+    - Are vegan shoes suitable for all types of weather conditions?
+
+
+- intent: ask_about_durability_of_vegan_shoes
+  examples: |
+    - Are vegan shoes durable like leather ones?
+    - Are vegan shoes as durable as leather shoes?
+    - How long do vegan shoes typically last compared to leather?
+    - Do vegan shoes wear out faster than leather shoes?
+    - Can vegan shoes withstand daily wear and tear like leather?
+    - Are there specific materials used in vegan shoes that enhance durability?
+    - Do vegan shoes require special care to maintain their durability?
+    - Are vegan shoes resistant to water and other elements like leather?
+    - Can vegan shoes be repaired easily if they get damaged?
+    - Are there any differences in durability between synthetic and natural vegan shoe materials?
+    - Do vegan shoes tend to lose shape or structure over time?
+    - Can vegan shoes handle rigorous activities or sports like leather shoes?
+    - Are there any brands known for producing particularly durable vegan footwear?
+    - How do the durability and longevity of vegan shoes compare across different price ranges?
+    - Do vegan shoes have any advantages over leather in terms of durability?
+    - Are there any specific tests or certifications that ensure the durability of vegan footwear?
+    - Can vegan shoes be as long-lasting as high-quality leather shoes?
+
+
+- intent: ask_how_to_identify_vegan_shoes
+  examples: |
+    - How can I tell if a shoe is truly vegan?
+
+- intent: ask_about_styles_of_vegan_shoes
+  examples: |
+    - Do vegan shoes come in various styles and designs?
+    - Are vegan shoes available in different styles like sneakers, boots, and flats?
+    - Can I find vegan shoes in trendy designs and colors?
+    - Do vegan shoe brands offer a variety of options for both casual and formal wear?
+    - Are there vegan alternatives for popular shoe styles like loafers or sandals?
+    - Can I find vegan athletic shoes for different sports and activities?
+    - Are there vegan options for specialized footwear like hiking boots or snow boots?
+    - Do vegan shoes come in different sizes to fit everyone?
+    - Can I find vegan shoes with features like cushioned soles or arch support?
+    - Are there vegan shoe brands that offer wide or narrow-width options?
+    - Do vegan shoes use synthetic materials that mimic the look and feel of leather?
+    - Are there vegan alternatives for shoes made from exotic materials like snakeskin or suede?
+    - Can I find vegan shoes with unique embellishments like studs or embroidery?
+    - Do vegan shoe brands follow current fashion trends in their designs?
+    - Are there vegan options for children's shoes in various styles?
+    - Can I find vegan shoes suitable for formal events like weddings or parties?
+    - Do vegan shoe brands offer customization options for personalized style?
+    - Are there vegan shoe collections designed by popular fashion designers?
+
+- intent: ask_about_eco_friendly_vegan_shoes
+  examples: |
+    - Are vegan shoes eco-friendly?
+    - Are vegan shoes more environmentally friendly than leather shoes?
+    - What materials are commonly used in making eco-friendly vegan shoes?
+    - How do vegan shoes contribute to sustainability?
+    - Are there any certifications to identify eco-friendly vegan shoe brands?
+    - Do vegan shoes have a smaller carbon footprint compared to leather shoes?
+    - What sustainable practices do vegan shoe companies employ in production?
+    - Can vegan shoes be recycled at the end of their lifecycle?
+    - Are there any biodegradable vegan shoe options available?
+    - How do the production processes of vegan shoes impact the environment?
+    - Are there any harmful chemicals used in the production of vegan shoes?
+    - Do vegan shoes use less water in their manufacturing process?
+    - Are there any initiatives in the vegan shoe industry to reduce waste?
+    - How do the durability and lifespan of vegan shoes compare to traditional shoes?
+    - Do vegan shoes require different care compared to leather shoes?
+    - Are there any eco-friendly alternatives to synthetic materials used in vegan shoes?
+    - What efforts are being made to improve the sustainability of vegan shoe production?
+    - Can vegan shoes be considered sustainable footwear options?
+    - Do vegan shoes contribute to deforestation or habitat destruction?
+
+
+- intent: ask_about_activity_specific_vegan_shoes
+  examples: |
+    - Can I find vegan shoes for specific activities like running or hiking?
+    - Are vegan running shoes suitable for long-distance running?
+    - What are some durable vegan options for trail running shoes?
+    - Can I find vegan hiking boots with good ankle support?
+    - Are there vegan alternatives to leather hiking shoes?
+    - Do vegan hiking shoes provide sufficient traction on various terrains?
+    - Are vegan trail running shoes waterproof?
+    - What materials are commonly used in vegan hiking footwear?
+    - Can I find vegan shoes specifically designed for rocky terrains?
+    - Are there vegan alternatives to traditional leather climbing shoes?
+    - Do vegan hiking boots require any special maintenance?
+    - Can I find vegan winter boots suitable for hiking in snowy conditions?
+    - Are there vegan options for lightweight hiking shoes?
+    - Do vegan trail running shoes offer adequate breathability?
+    - Can I find vegan shoes with reinforced toe protection for hiking?
+    - Are there vegan alternatives to traditional leather mountaineering boots?
+    - Do vegan hiking shoes break in similarly to leather ones?
+    - Can I find vegan shoes suitable for both hiking and casual wear?
+
+
+- intent: ask_about_affordability_of_vegan_shoes
+  examples: |
+    - Are vegan shoes more affordable than leather ones?
+    - Are vegan shoes generally cheaper than leather shoes?
+    - Can I find budget-friendly vegan shoe options?
+    - Do vegan shoes tend to cost less due to the materials used?
+    - Are there affordable vegan shoe brands available?
+    - How do the prices of vegan shoes compare to leather shoes?
+    - Are there any cost-saving benefits to choosing vegan footwear?
+    - Can I expect to pay more for leather shoes compared to vegan ones?
+    - Are there any hidden costs associated with vegan shoes?
+    - Do vegan shoes offer better value for money than leather shoes?
+    - Are there sales or discounts available for vegan shoe options?
+    - Are there specific factors that contribute to the affordability of vegan shoes?
+    - Do vegan shoes vary in price depending on the brand?
+    - Can I find inexpensive vegan alternatives to leather shoes?
+    - Are there any long-term cost savings associated with choosing vegan footwear?
+    - How do the durability and lifespan of vegan shoes affect their affordability?
+    - Are there any additional expenses associated with maintaining vegan shoes?
+    - Are there any economic benefits to the widespread adoption of vegan footwear?
+
+
+- intent: care_for_clean_vegan_shoes
+  examples: |
+    - How do I care for and clean my vegan shoes?
+    - What cleaning products are safe for vegan shoe materials?
+    - Can I machine wash my vegan shoes?
+    - How can I prevent fading or discoloration on vegan shoes?
+    - What's the best way to remove stains from vegan shoes?
+    - Are there eco-friendly cleaning methods for vegan shoes?
+    - Should I apply protective sprays to my vegan shoes?
+    - How should I dry my vegan shoes after cleaning?
+    - Can I use natural remedies like vinegar or baking soda on vegan shoes?
+    - What's the best way to maintain the shape of vegan shoes while cleaning?
+    - How often should I clean my vegan shoes?
+    - Are there specific tools or brushes recommended for cleaning vegan shoes?
+    - Can I use shoe conditioner on vegan suede or faux leather?
+
+# - intent: reputable_brands_for_vegan_shoes
+#   examples: |
+#     - Are there any reputable brands known for their vegan shoe collections?
+#     - Where can I buy vegan shoes online from well-known brands?
+#     - Can I find vegan shoes from reputable and popular shoe companies?
+#     - Do any celebrities endorse specific vegan shoe brands?
+#     - What are some high-quality vegan shoe brands?
+#     - Are there affordable options from reputable vegan shoe brands?
+#     - Can I find a variety of styles and designs from top vegan shoe brands?
+#     - How do I identify if a shoe brand specializes in vegan-friendly footwear?
+#     - Are there any eco-friendly certifications associated with reputable vegan shoe brands?
+#     - Do vegan shoe brands offer customization or personalized options?
+#     - Can I find vegan shoes suitable for various occasions from renowned brands?
+#     - Are there any unique features or technologies used by top vegan shoe companies?
+
+
+- intent: comfort_and_support_of_vegan_shoes
+  examples: |
+    - Do vegan shoes offer the same level of comfort and support as traditional shoes?
+    - Are vegan shoes comfortable to wear for long periods?
+    - Can I find vegan shoes with memory foam or cushioned insoles?
+    - Are vegan shoes suitable for people with foot conditions like plantar fasciitis?
+    - How does the breathability of vegan shoes compare to leather shoes?
+    - Can I get arch support in vegan shoes for flat feet?
+    - Are there wide-width options available in vegan shoe styles?
+    - Do vegan shoes come in various designs and styles, from casual to formal?
+    - Are vegan shoes suitable for people with allergies to leather?
+    - Can I find vegan shoes from reputable brands that prioritize comfort?
+    - Are vegan shoes recommended for outdoor activities like hiking or sports?
+
+- intent: materials_of_vegan_shoes
+  examples: |
+    - What materials are vegan shoes made from?
+    - How do vegan shoe materials compare to traditional leather?
+    - Are there eco-friendly alternatives to leather used in vegan shoe production?
+    - Can vegan shoes be as durable as those made from animal-derived materials?
+    - Do vegan shoes come in a variety of styles and designs?
+    - Are vegan shoes made from synthetic materials harmful to the environment?
+    - How can I identify vegan-friendly shoe materials?
+    - Can vegan shoes withstand different weather conditions?
+    - Are vegan shoe materials cruelty-free and sustainably sourced?
+    - What innovative technologies are used in vegan shoe production?
+    - Can vegan shoes be recycled or composted at the end of their lifecycle?
+    - Are there health benefits associated with wearing vegan shoes?
+    - Do vegan shoes offer the same quality and breathability as traditional leather?
+
+# - intent: sustainable_eco_friendly_vegan_shoes
+#   examples: |
+#     - Are vegan shoes sustainable and eco-friendly?
+#     - What sustainable practices are used in vegan shoe production?
+#     - How do vegan shoes contribute to reducing carbon footprints?
+#     - Are there certifications for identifying eco-friendly vegan shoe brands?
+#     - Can vegan shoes be recycled or biodegraded at the end of their life?
+#     - Do vegan shoe companies use less water and chemicals in manufacturing?
+#     - Are there initiatives to reduce waste and promote sustainability in vegan shoe production?
+#     - How do the environmental impacts of vegan shoe materials compare to traditional leather?
+#     - Can I find vegan shoes made from biodegradable or natural materials?
+#     - What efforts are made by vegan shoe brands to protect forests and habitats?
+#     - Are there any drawbacks to choosing vegan shoes from an environmental perspective?
+#     - Can consumers ensure they're purchasing truly eco-friendly vegan shoes?
+#     - How do vegan shoes support sustainable living and conscious consumption?
+#     - Are there innovations in vegan shoe technology aimed at improving sustainability?
+
+# vegan accessories 
+- intent: vegan_accessories_definition
+  examples: |
+    - What are vegan accessories?
+    - What defines vegan accessory items?
+    - Are vegan accessories cruelty-free?
+    - What materials are vegan-friendly?
+    - Do vegan accessories use leather?
+    - Are vegan accessories eco-friendly?
+    - How durable are vegan accessories?
+    - Can vegan accessories be stylish?
+    - Are vegan accessories affordable?
+    - Are vegan accessories waterproof?
+    - Are vegan accessories easy to clean?
+    - Do vegan accessories include belts?
+    - What about vegan footwear options?
+    - Are vegan accessories biodegradable?
+    - Can I find vegan watch bands?
+    - What vegan alternatives exist?
+    - Are vegan accessories customizable?
+    - Do vegan accessories come in a variety?
+    - Are vegan accessories suitable gifts?
+    - Where can I buy vegan accessories?
+
+- intent: types_of_vegan_accessories
+  examples: |
+    - What types of vegan accessories are available?
+    - Vegan accessory types: bags, shoes
+    - Common vegan accessory options include
+    - What vegan accessories can I find?
+    - Are there diverse vegan accessories?
+    - Which vegan accessories are trendy?
+    - Vegan accessories: belts, wallets
+    - Where to buy vegan accessories?
+    - Seeking stylish vegan accessory choices?
+    - What vegan-friendly accessories are popular?
+    - What kinds of vegan accessories?
+    - Vegan accessory varieties and styles?
+    - What are some vegan accessories?
+    - Exploring vegan accessory possibilities?
+    - Looking for eco-conscious accessory alternatives?
+    - Which brands offer vegan accessories?
+    - Any recommendations for vegan accessories?
+    - What vegan accessory brands exist?
+    - Where can I find vegan-friendly accessories?
+    - Vegan accessory options and availability?
+    - What to know about vegan accessories?
+
+- intent: durability_and_quality_of_vegan_accessories
+  examples: |
+    - Are vegan accessories durable and high-quality?
+    - Are vegan accessories durable enough?
+    - Can vegan items withstand wear?
+    - Are vegan products high-quality?
+    - Do vegan materials last long?
+    - Are vegan accessories reliable?
+    - Is durability guaranteed with vegan?
+    - Are vegan goods well-made?
+    - Can vegan items endure everyday use?
+    - Do vegan accessories hold up?
+    - Are vegan materials long-lasting?
+    - Are vegan products sturdy?
+    - Can vegan items last years?
+    - Is quality assured with vegan?
+    - Are vegan accessories resilient?
+    - Do vegan materials offer longevity?
+    - Are vegan products dependable?
+    - Can vegan items endure time?
+    - Are vegan accessories robust?
+    - Do vegan materials ensure durability?
+    - Is vegan quality comparable?
+
+- intent: where_to_find_vegan_accessories
+  examples: |
+    - Where can I find vegan accessories?
+    - Where are vegan-friendly accessory shops?
+    - Vegan accessory stores near me?
+    - Best places for vegan accessories?
+    - Find cruelty-free accessory retailers?
+    - Locate vegan-friendly accessory boutiques?
+    - Where buy ethical accessory items?
+    - Shop vegan accessory collections where?
+    - Best spots for vegan accessories?
+    - Stores offering vegan accessory options?
+    - Where discover eco-friendly accessory shops?
+    - Find sustainable accessory retailers
+    - Looking for vegan accessory vendors?
+    - Where purchase vegan accessory products?
+    - Best places to find vegan accessories?
+    - Seeking out vegan accessory sellers?
+    - Where source vegan-friendly accessories?
+    - Locate cruelty-free accessory outlets where?
+    - Discover vegan accessory sellers nearby.
+    - Where browse vegan accessory selections?
+    - Best places to buy vegan accessories?
+
+- intent: sustainability_of_vegan_accessories
+  examples: |
+    - Are vegan accessories sustainable and eco-friendly?
+    - Are vegan accessories truly sustainable?
+    - How eco-friendly are vegan accessories?
+    - Do vegan accessories support sustainability?
+    - Are vegan accessories environmentally conscious?
+    - Are vegan accessories eco-conscious choices?
+    - Do vegan accessories promote sustainability?
+    - Are vegan accessories better environmentally?
+    - How sustainable are vegan accessories?
+    - Are vegan accessories truly eco-friendly?
+    - Do vegan accessories reduce environmental impact?
+    - Are vegan accessories ethically sustainable?
+    - Are vegan accessories planet-friendly options?
+    - Do vegan accessories prioritize sustainability?
+    - Are vegan accessories beneficially eco-conscious?
+    - Are vegan accessories mindful of the environment?
+    - Do vegan accessories align with eco-values?
+    - Are vegan accessories environmentally friendly?
+    - Are vegan accessories ethical and sustainable?
+    - How do vegan accessories impact sustainability?
+
+- intent: environmental_impact_of_vegan_accessories
+  examples: |
+    - How are vegan accessories environmentally friendly?
+    - Do vegan accessories help the environment?
+    - Are vegan accessories eco-friendly?
+    - Do vegan products harm the environment?
+    - How eco-conscious are vegan accessories?
+    - Are vegan materials environmentally sustainable?
+    - Are vegan options better environmentally?
+    - Do vegan alternatives benefit the environment?
+    - Are vegan choices eco-responsible?
+    - Do vegan materials reduce environmental impact?
+    - Are vegan products sustainable choices?
+    - How do vegan accessories impact the environment?
+    - Are vegan materials environmentally sound?
+    - Do vegan alternatives lessen environmental harm?
+    - Are vegan options better for the planet?
+    - Are vegan materials Earth-friendly?
+    - Are vegan products greener choices?
+    - Do vegan accessories promote sustainability?
+    - How do vegan products support the environment?
+    - Are vegan choices eco-friendly alternatives?
+    - Are vegan materials planet-conscious options?
+
+# - intent: difference_from_traditional_accessories
+#   examples: |
+#     - How are vegan accessories different from traditional accessories?
+#     - Vegan accessories versus traditional accessories?
+#     - What sets vegan accessories apart?
+#     - How do vegan accessories differ?
+#     - Vegan vs traditional accessory variances?
+#     - Differences: vegan versus traditional accessories?
+#     - Vegan and traditional accessories: distinctions?
+#     - What makes vegan accessories unique?
+#     - In what ways are vegan accessories distinct?
+#     - What makes vegan accessories stand out?
+#     - What distinguishes vegan from traditional accessories?
+#     - Vegan versus traditional accessories: distinctions?
+#     - What sets vegan accessories apart?
+#     - What makes vegan accessories unique?
+#     - How are vegan accessories different?
+#     - What makes vegan accessories stand out?
+#     - How are vegan accessories unique?
+#     - What distinguishes vegan accessories?
+#     - Differences between vegan and traditional accessories?
+#     - Why choose vegan over traditional accessories?
+
+
+- intent: materials_used_in_vegan_accessories
+  examples: |
+    - What materials compose vegan accessories?
+    - Commonly used materials in vegan accessories?
+    - What are typical vegan accessory materials?
+    - Which materials are used in vegan accessories?
+    - What vegan-friendly materials craft accessories?
+
+- intent: cost_of_vegan_accessories
+  examples: |
+    - Are vegan accessories more expensive?
+    - Are vegan accessories pricier? Why?
+    - Cost difference between vegan options?
+    - Comparing prices: vegan vs. non-vegan?
+    - Vegan accessories: higher price tag?
+    - Do vegan products cost more?
+    - Why choose vegan accessories financially?
+    - Vegan vs. leather: price discrepancy?
+    - Are vegan alternatives more expensive?
+    - Are vegan options generally costlier?
+    - Is there a premium for vegans?
+    - Price variance: vegan accessories?
+    - Are vegan choices more expensive?
+    - Price comparison: vegan vs. non-vegan?
+    - Expense disparity: vegan accessories?
+    - Does vegan equate too pricier?
+    - Vegan: worth the higher cost?
+    - Are vegan alternatives costlier overall?
+    - The financial impact of vegan preferences?
+    - Vegan purchases: higher cost involved?
+    - Is there a price hike for vegan accessories?
+
+- intent: styles_and_designs_of_vegan_accessories
+  examples: |
+    - Do vegan accessories come in different styles and designs?
+    - Do vegan accessories offer variety?
+    - Styles and designs for vegans?
+    - Are different vegan accessory styles available?
+    - Variety of designs for vegans?
+    - Options in vegan accessory designs?
+
+# - intent: recyclability_of_vegan_accessories
+#   examples: |
+#     - Can vegan accessories be recycled?
+#     - Are vegan accessories recyclable?
+#     - How to recycle vegan accessories?
+#     - Can faux leather be recycled?
+#     - What's the recycling process for vegan materials?
+#     - Is recycling common for vegan products?
+#     - How eco-friendly are vegan accessories?
+#     - Are recycled vegan materials sustainable?
+#     - Are there recycling programs for vegan items?
+#     - Can I recycle vegan shoes?
+#     - Are vegan bags recyclable?
+#     - What about vegan wallets?
+#     - Do vegan belts recycle well?
+#     - Can I recycle vegan watchbands?
+#     - Are vegan accessories waterproofed?
+#     - How to dispose of vegan accessories?
+#     - What's the lifespan of recycled vegan products?
+#     - Are there limitations to recycling vegan items?
+#     - What happens to recycled vegan materials?
+#     - Can I repurpose old vegan accessories?
+#     - How to support sustainable vegan fashion
+
+- intent: special_care_for_vegan_accessories
+  examples: |
+    - Do vegan accessories require special care?
+    - Are vegan accessories easy to care for?
+    - Do vegan items need unique maintenance?
+    - How to care for vegan accessories?
+    - Special care for vegan products?
+    - Tips for maintaining vegan accessories?
+
+- intent: water_resistance_of_vegan_accessories
+  examples: |
+    - Are vegan accessories waterproof?
+    - Are vegan accessories resistant to water?
+    - Do vegan accessories repel water?
+    - Are vegan items water-resistant?
+    - Are vegan accessories waterproofed?
+    - Are vegan accessories hydrophobic?
+    - Do vegan materials resist water?
+    - Are vegan products waterproof-friendly?
+    - Are vegan accessories water-repellent?
+    - Do vegan items withstand water?
+    - Are vegan materials waterproof-coated?
+    - Are vegan accessories moisture-resistant?
+    - Do vegan products repel moisture?
+    - Are vegan accessories splash-proof?
+    - Are vegan materials water-repellent?
+    - Do vegan items resist liquid?
+    - Are vegan accessories drip-resistant?
+    - Do vegan materials repel water?
+    - Are vegan products moisture-repelling?
+    - Are vegan accessories waterproof-treated?
+    - Do vegan items repel wetness?
+
+- intent: allergic_reactions_to_vegan_accessories
+  examples: |
+    - Can vegan accessories cause allergic reactions?
+    - Can vegan accessories trigger allergies?
+    - Are vegan accessories allergy-friendly?
+    - Do vegan accessories cause reactions?
+    - Any allergic risks with vegan accessories?
+    - Are allergic reactions common with vegan accessories?
+
+# - intent: suitability_of_vegan_accessories_for_ethical_or_religious_beliefs
+#   examples: |
+#     - Are vegan accessories suitable for people with ethical or religious beliefs?
+#     - Do vegan accessories align ethically?
+#     - Are vegan options religiously acceptable?
+#     - Ethical and religious views on veganism?
+#     - Do vegan choices honor beliefs?
+#     - Are vegan accessories ethical?
+#     - Do vegans respect religious beliefs?
+#     - Are vegan products ethically sound?
+#     - Do vegan items align religiously?
+#     - Ethics and religion in veganism?
+#     - Veganism: Ethical or religiously motivated?
+#     - Do vegan choices accommodate beliefs?
+#     - Are vegan options respectful?
+#     - Ethical considerations in vegan accessories?
+#     - Are vegan items religiously approved?
+#     - Veganism: A question of ethics?
+#     - Religious acceptance of vegan accessories?
+#     - Are vegan products ethically aligned?
+#     - Do vegan choices adhere to beliefs?
+#     - Veganism: Ethical and religious perspectives?
+
+- intent: sustainability_of_vegan_accessories
+  examples: |
+    - Are vegan accessories sustainable?
+    - Are vegan accessories truly sustainable?
+    - How eco-friendly are vegan accessories?
+    - Do vegan accessories benefit sustainability?
+    - Are vegan accessories environmentally responsible?
+    - Can vegan accessories be sustainable?
+    - What makes vegan accessories sustainable?
+    - Are vegan accessories ethically made?
+    - Are vegan accessories eco-conscious choices?
+    - Are vegan accessories environmentally friendly?
+    - Are vegan accessories better for sustainability?
+    - Do vegan accessories support sustainability efforts?
+    - How sustainable are vegan accessories?
+    - Are vegan accessories better for the environment?
+    - Are vegan accessories truly eco-friendly?
+    - Are vegan accessories good for sustainability?
+    - Do vegan accessories help reduce environmental impact?
+    - Are vegan accessories a sustainable choice?
+    - How do vegan accessories impact sustainability?
+    - Are vegan accessories part of sustainable fashion?
+    - What makes vegan accessories eco-conscious?
+
+- intent: vegan_accessories_smell
+  examples: |
+    - Do vegan accessories smell like animal leather?
+    - How does vegan accessories' smell compare to animal leather?
+    - Is there a difference in smell between vegan accessories and animal leather?
+    - What's the scent of vegan accessories versus real leather?
+    - Describe the odor of vegan accessories versus real leather.
+    - Do vegan leather products smell like animal leather?
+    - How does the fragrance of vegan accessories compare to animal leather?
+    - Are vegan accessories odorless like animal leather?
+    - Is the smell of vegan accessories similar to animal leather?
+    - Do vegan items have a scent like animal leather?
+
+# - intent: vegan_accessories_customization
+#   examples: |
+#     - Can vegan accessories be customized?
+#     - Is it possible to customize vegan accessories?
+#     - Are vegan accessories available for customization?
+#     - How customizable are vegan accessories?
+#     - Do vegan accessories offer customization options?
+#     - Can I personalize vegan accessories?
+#     - Is customization available for vegan items?
+#     - Are vegan accessories able to be customized?
+#     - Do vegan products allow for personalization?
+#     - Can you customize vegan-friendly accessories?
+
+- intent: vegan_accessories_labor_practices
+  examples: |
+    - Do vegan accessories support fair labor practices?
+    - Are fair labor practices followed in the production of vegan accessories?
+    - How ethical are the labor practices behind vegan accessories?
+    - Are vegan accessory brands committed to fair wages and labor rights?
+    - Do vegan accessories ensure fair treatment of workers?
+    - Is there transparency in the labor practices of vegan accessory companies?
+    - Are workers involved in making vegan accessories treated ethically?
+    - Are vegan accessories produced under fair labor conditions?
+    - Do vegan accessory manufacturers prioritize fair wages and labor standards?
+    - Are there social responsibility initiatives in vegan accessory production?
+
+- intent: vegan_accessories_repair
+  examples: |
+    - Can vegan accessories be repaired?
+    - Is it possible to repair vegan accessories?
+    - Do vegan products offer repair services?
+    - How durable are vegan accessories? Can they be fixed?
+    - Can damaged vegan accessories be fixed?
+    - Are repair services available for vegan-friendly items?
+    - Do vegan accessory brands support repairability?
+    - Can I get my vegan accessories repaired if they get damaged?
+    - Are there options to mend vegan accessories?
+    - Can vegan accessories be restored if they wear out?
+
+# important question 
+# weight loss
+- intent: ask_vegan_diet_weight_loss
+  examples: |
+    - Can a vegan diet help to reduce body weight?
+    - Does going vegan help with weight loss?
+    - Will a vegan diet help me lose weight?
+    - Can eating vegan make me lose weight?
+    - Is weight loss possible on a vegan diet?
+    - Do people lose weight on a vegan diet?
+    - Does a vegan diet contribute to weight loss?
+    - How does a vegan diet affect body weight?
+    - Can adopting a vegan diet reduce my body weight?
+    - Is it easier to lose weight on a vegan diet?
+    - can vegan help loss my weight
+    - weight loss
+    - Can vegan diet burn fat?
+    - Will vegan food shed pounds?
+    - Lose weight on vegan?
+    - Is vegan good for slimming?
+    - Vegan diet weight loss?
+    - Veganism for fat loss?
+    - Will vegan reduce weight?
+    - Vegan diet for losing weight?
+    - Can plants help lose weight?
+    - Is vegan diet effective?
+    - Do vegans lose weight?
+    - Vegan meals for weight loss?
+    - Will vegan diet slim me?
+    - Can vegan cut fat?
+    - Is vegan diet slimming?
+    - Plant-based for weight loss?
+    - Can vegan diet aid loss?
+    - Vegan food and weight loss?
+    - Can I lose weight through vegan eating?
+    - Is weight loss achievable through veganism?
+    - Can you slim down through a vegan diet?
+    - Will I shed pounds through vegan meals?
+    - Can weight loss be achieved through vegan food?
+    - Is it possible to lose weight through vegan diet?
+    - Does weight loss happen through vegan eating?
+    - Is slimming possible through vegan choices?
+    - Can you reduce weight through vegan options?
+    - Can fat loss be done through a vegan diet?
+    - Is weight reduction possible through veganism?
+
+    
+
+
+- intent: ask_drinking_tea_coffee_on_plant_based_diet
+  examples: |
+    - Can you drink tea on a plant-based diet?
+    - Can you drink coffee on a plant-based diet?
+    - Is tea allowed on a plant-based diet?
+    - Is coffee allowed on a plant-based diet?
+    - Can I have tea on a plant-based diet?
+    - Can I have coffee on a plant-based diet?
+    - Are tea and coffee okay on a plant-based diet?
+    - Is it okay to drink tea on a plant-based diet?
+    - Is it okay to drink coffee on a plant-based diet?
+    - Is tea permitted on a plant-based diet?
+    - Is coffee permitted on a plant-based diet?
+    - Are tea and coffee allowed on a plant-based diet? 
+    - vegan tea and coffee
+    - can  i have milk tea
+    - can i have milk coffee 
+    - coffee
+    - tea
+
+
+# - intent: vegan_weight_loss
+#   examples: |
+#     - Do vegans lose weight naturally?
+#     - Is weight loss common among vegans?
+#     - Can a vegan diet help in losing weight naturally?
+#     - Do people lose weight on a vegan diet?
+#     - Does a vegan diet lead to natural weight loss?
+#     - Are vegans likely to lose weight naturally?
+#     - Is weight loss a benefit of a vegan diet?
+#     - Do vegans experience natural weight loss?
+#     - Can going vegan result in weight loss?
+#     - Is natural weight loss associated with veganism?
+
+- intent: switch_to_vegan_diet_effects
+  examples: |
+    - What happens to your body when you switch to a vegan diet?
+    - How does switching to a vegan diet affect your body?
+    - What are the effects on your body when you switch to a vegan diet?
+    - Can you tell me what happens to your body on a vegan diet?
+    - What changes occur in your body when you start a vegan diet?
+    - Describe the body changes when switching to a vegan diet.
+    - How does a vegan diet impact your body?
+    - What are the health effects of switching to a vegan diet?
+    - Explain what happens to the body when going vegan.
+    - What bodily changes can be expected when you go vegan?
+    - How does a vegan diet change your body?
+    - What are the physical effects of a vegan diet?
+    - body switch in vegan products 
+
+- intent: weight_loss_tips
+  examples: |
+    - What are the tips to reduce weight loss?
+    - How can I lose weight effectively?
+    - Give me some tips for weight loss.
+    - What are some effective ways to reduce weight?
+    - Can you provide advice on losing weight?
+    - Tips for shedding pounds?
+    - weight loss tips
+    - How can I lose weight
+    - how to reduce my weight 
+    - loss tips
+    - tips for weight loss 
+    - weight loss advice
+    - weight loss help
+  
+
+# weight gain
+- intent: vegan_diet_weight_gain
+  examples: |
+    - Can a vegan diet help in gaining weight?
+    - Does following a vegan diet assist in gaining weight?
+    - Is it possible to gain weight on a vegan diet?
+    - Will adopting a vegan diet help me gain weight?
+    - Can weight gain be achieved with a vegan diet?
+    - Does veganism aid weight gain?
+    - Gain weight on vegan diet?
+    - Vegan diet for weight gain?
+    - weight gain
+
+
+- intent: vegan_weight_gain
+  examples: |
+    - How can vegans gain weight healthily?
+    - What are healthy ways for vegans to gain weight?
+    - Can you suggest ways for vegans to gain weight?
+    - Tips for healthy weight gain on a vegan diet?
+    - How do vegans build muscle and gain weight?
+    - Ways for vegans to increase body mass healthily?
+
+
+- intent: weight_gain_on_vegan_diet
+  examples: |
+    - How much weight on vegan diet?
+    - Can vegan diet cause weight gain?
+    - Vegan diet and weight gain?
+    - Can you gain weight while following a vegan diet?
+    - What is the potential weight gain on a vegan diet?
+    - Does a vegan diet contribute to weight gain?
+    - How much weight can you expect to gain on a vegan diet?
+    - Will I gain weight if I switch to a vegan diet?
+    - Is weight gain common on a vegan diet
+
+- intent: weight_gain_tips
+  examples: |
+    - How can I gain weight as a vegan?
+    - Tips for gaining weight on a vegan diet?
+    - What are some ways to increase weight as a vegan?
+    - How to put on weight while following a vegan lifestyle?
+    - Strategies for gaining weight as a vegan?
+    - weight gain tips
+    - gain tips
+    - tips for weight gain
+    - weight gain advice
+    - weight gain help
+    
+
+# Dairy Product alternatives
+- intent: dairy_product_alternatives
+  examples: |
+    - What are some common alternatives for dairy products?
+    - Can you suggest substitutes for dairy products?
+    - Tell me about alternatives to dairy products.
+    - What can I use instead of dairy products?
+    - Give me some dairy-free options.
+    - milk alternatives
+    - dairy product alternative
+    - yogurt alternative
+    - cheese alternative
+    - can i have yogurt 
+    - can i use vegan dairy product
+
+# Meat alternative
+- intent: common_meat_alternatives
+  examples: |
+    - What are some common alternatives for meat products?
+    - Can you list some substitutes for meat?
+    - Tell me about common meat replacements.
+    - What are the alternatives to meat?
+    - Give me examples of meat alternatives.
+    - Are meat substitutes healthier than the meat?
+    - meat alternative
+    - chicken alternative
+    - beef alternative
+
+# Disease Managements
+- intent: vegan_diet_prevent_disease
+  examples: |
+    - Can a vegan diet prevent disease?
+    - Does eating vegan prevent diseases?
+    - Is it true that vegan diet can prevent diseases?
+    - Can diseases be avoided with a vegan diet?
+    - Do vegans have lower risk of diseases?
+    - Does a vegan lifestyle reduce disease risk?
+    - Is there evidence that veganism prevents diseases?
+    - Can switching to a vegan diet help prevent illness?
+    - Are there health benefits to following a vegan diet?
+    - Can adopting a vegan lifestyle lower disease incidence?
+    - disease managements
+
+# Diabetes
+- intent: vegan_diet_lower_diabetes_risk
+  examples: |
+    - Does a vegan diet lower the risk of diabetes?
+    - Can following a vegan diet reduce the risk of diabetes?
+    - Is there a lower risk of diabetes with a vegan diet?
+    - Do vegans have a decreased risk of diabetes?
+    - Can diabetes risk be reduced by adopting a vegan diet? 
+    - diabetes
+
+
+# PCOD
+- intent: vegan_diet_for_PCOS
+  examples: |
+    - Is a vegan diet good for PCOD?
+    - Can a vegan diet help with PCOS?
+    - How does a vegan diet affect PCOD?
+    - Is it beneficial to follow a vegan diet for PCOS?
+    - Does a vegan diet improve symptoms of PCOS?
+    - Will switching to a vegan diet benefit PCOD?
+    - Are there any advantages of a vegan diet for PCOS?
+    - Can PCOS symptoms be managed with a vegan diet?
+    - pcod
+    - pcos
+    - pcos/pcod
+
+# Cardiovascular 
+- intent: veganism_help_reduce_cardiovascular_disease
+  examples: |
+    - Veganism and cardiovascular disease?
+    - Vegan diet and heart health?
+    - Benefits of veganism for heart?
+    - How does veganism help reduce cardiovascular disease?
+    - Can you explain the link between veganism and cardiovascular health?
+    - Cardiovascular
+
+# Cancer
+- intent: vegan_diet_prevent_cancer
+  examples: |
+    - Can a vegan diet prevent cancer?
+    - Does veganism prevent cancer?
+    - Veganism and cancer prevention?
+    - Is there evidence that a vegan diet can prevent cancer?
+    - Does following a vegan lifestyle reduce the risk of cancer?
+    - Cancer
+    - canser
+    - how can reduce cancer problem through the vegan diet
+    - can vegan diet help in cancer
+    - vegen diet help in cancer 
+    -  vegan diet reduce cancer risk
+    
+
+  
+# Alzheimer
+- intent: best_diet_for_alzheimers_prevention
+  examples: |
+    - What is the best diet to prevent Alzheimer's disease?
+    - Which diet is recommended for Alzheimer's prevention?
+    - What should I eat to reduce the risk of Alzheimer's?
+    - Tell me the optimal diet for preventing Alzheimer's.
+    - Which foods help prevent Alzheimer's disease?
+    - Alzheimer
+
+# Arthritis 
+- intent: best_diet_for_arthritis
+  examples: |
+    - What is the best diet for arthritis?
+    - Can you recommend a diet for arthritis?
+    - What should I eat if I have arthritis?
+    - Tell me about the most suitable diet for arthritis.
+    - Which foods are beneficial for arthritis?
+    - arthritis
+
+# Cholesterol
+- intent: vegan_diet_benefits_cholesterol_reduction
+  examples: |
+    - How does a vegan diet help to reduce cholesterol?
+    - Can you explain how a vegan diet lowers cholesterol?
+    - What are the ways a vegan diet reduces cholesterol levels?
+    - Explain the connection between a vegan diet and lowering cholesterol.
+    - How is cholesterol reduced by following a vegan diet?
+    - Cholesterol
+
+# Thyroid 
+- intent: best_diet_for_thyroid_problems
+  examples: |
+    - What is the best diet for thyroid problems?
+    - Can you recommend a diet for thyroid issues?
+    - What diet should I follow for thyroid problems?
+    - Tell me about the ideal diet for thyroid issues.
+    - How can I improve my diet for thyroid problems?
+    - Thyroid
+
+# Blood Pressure
+- intent: diet_and_blood_pressure_maintenance
+  examples: |
+    - How can diet help maintain blood pressure?
+    - What role does diet play in controlling blood pressure?
+    - Can you explain how dietary choices affect blood pressure?
+    - Blood Pressure
+    - will vegan diet help control my blood pressure
+    - reduce blood pressure
+
+
+# Essential Nutrients 
+- intent: essential_nutrients_from_vegan_diet
+  examples: |
+    - Essential nutrients from vegan diet?
+    - What nutrients can I get from a vegan diet?
+    - Which essential nutrients are found in vegan food?
+    - List essential nutrients in vegan diet.
+    - What are the key nutrients in a vegan diet?
+    - What are the essential nutrients I can get from a vegan diet?
+    - will i get my protein
+    - will i get enough calcium on a vegan diet
+    - how will my body get b12 from a vegan diet
+    - b12 
+    - calcium
+    - protein 
+
+- intent: vegan_nutrient_requirements
+  examples: |
+    - How does vegan help to meet all the required nutrients?
+    - Can a vegan diet fulfill all necessary nutrient needs?
+    - What nutrients can be obtained from a vegan diet?
+    - Does veganism provide adequate nutrition?
+    - How can vegans ensure they get all the essential nutrients?
+
+
+- intent: whatapps
+  examples: |
+    - whatapps
+    - connect with whatapps
+
+- intent: emails 
+  examples: |
+    - emails
+    - connect with emails
+
+- intent: weblink
+  examples: |
+    - website link
+    - connect with website

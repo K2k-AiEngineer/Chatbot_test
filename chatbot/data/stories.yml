@@ -1,0 +1,717 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps: 
+  - intent: greets
+  # - action: action_show_video  # step 1
+  - action: utter_greet
+  - action: name_form
+  - active_loop: name_form
+  - slot_was_set:
+    - requested_slot: first_name
+  - slot_was_set:
+    - first_name: prem
+  - slot_was_set:
+    - requested_slot: last_name
+  - slot_was_set:
+    - last_name: kumar
+  - slot_was_set:
+    - requested_slot: phone_number
+  - slot_was_set:
+    - phone_number: 9799304927
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: prem@gmail.com
+  - slot_was_set:
+    - requested_slot: city
+  - slot_was_set:
+    - city: Jaipur
+  - slot_was_set:
+    - requested_slot: age
+  - slot_was_set:
+    - age: 21
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: utter_vegan_option
+
+
+- story: the script
+  steps:
+  - intent: product_list
+  - action: actions_list
+  # - intent: buynow
+  # - action: utter_buynow
+
+
+- story: the buynow
+  steps:
+  - intent: buynow
+  - action: utter_buynow
+
+- story: the script
+  steps:
+  - intent: product_list
+  - action: actions_list
+  - intent: contact_details
+  - action: utter_contact_details
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: action_show_video
+  - action: utter_second_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+
+- story: greeting path
+  steps:
+  - intent: greet
+  - action: utter_second_greet
+
+- story: sad path 2
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Handle fallback and prompt to rephrase
+  steps:
+    - action: action_default_fallback
+
+- story: whatapp
+  steps:
+  - intent: whatapps
+  - action: utter_whatapps
+
+- story: emails
+  steps:
+  - intent: emails
+  - action: utter_emails
+
+- story: weblink
+  steps:
+  - intent: weblink
+  - action: utter_weblink
+
+#_______________________________________________________________________________________________________________________________________________
+# - story: interactive_story_1
+#   steps:
+#   # - intent: greet
+#   # - action: utter_greet
+#   - intent: request_vegan_food_information
+#   - action: name_form
+#   - active_loop: name_form
+#   - slot_was_set:
+#     - requested_slot: first_name
+#   - slot_was_set:
+#     - first_name: vincent
+#   - slot_was_set:
+#     - requested_slot: last_name
+#   - slot_was_set:
+#     - last_name: vincent-mcvincent
+#   - slot_was_set:
+#     - requested_slot: phone_number
+#   - slot_was_set:
+#     - phone_number: 9799304927
+#   - slot_was_set:
+#     - requested_slot: email
+#   - slot_was_set:
+#     - email: prem@gmail.com
+#   - slot_was_set:
+#     - requested_slot: city
+#   - slot_was_set:
+#     - city: Jaipur
+#   - slot_was_set:
+#     - requested_slot: age
+#   - slot_was_set:
+#     - age: 25
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_submit
+#   - action: utter_slots_values
+#   - action: utter_vegan_option
+
+# - story: select_personal
+#   steps:
+#   - intent: select_personal
+#   - action: action_provide_vegan_details
+  
+
+# - story: select_family
+#   steps:
+#   - intent: select_family
+#   - action: action_provide_vegan_details
+
+# - story: select_corporate
+#   steps:
+#   - intent: select_corporate
+#   - action: action_provide_vegan_details
+
+#_____________________________________________________
+- story: two_member
+  steps:
+  - intent: two_member
+  - action: action_provide_vegan_sub_details
+  - action: actions_list
+
+- story: four_member
+  steps:
+  - intent: four_member
+  - action: action_provide_vegan_sub_details
+  - action: actions_list
+
+- story: six_member
+  steps:
+  - intent: six_member
+  - action: action_provide_vegan_sub_details
+  - action: actions_list
+
+- story: more_member
+  steps:
+  - intent: more_member
+  - action: action_provide_vegan_sub_details
+  - action: actions_list
+
+- story: employee_one_to_ten
+  steps:
+  - intent: employee_one_to_ten
+  - action: action_provide_vegan_subcorporate_details
+  - action: actions_list
+
+- story: employee_one_to_twentyfive
+  steps:
+  - intent: employee_one_to_twentyfive
+  - action: action_provide_vegan_subcorporate_details
+  - action: actions_list
+
+- story: employee_one_to_fifty
+  steps:
+  - intent: employee_one_to_fifty
+  - action: action_provide_vegan_subcorporate_details
+  - action: actions_list
+
+- story: employee_more_than_fifty
+  steps:
+  - intent: employee_more_than_fifty
+  - action: action_provide_vegan_subcorporate_details
+  - action: actions_list
+
+# add main dataa___________________________________________________________________________________
+- story: Vegan Intent
+  steps:
+  - intent: vegan
+  - action: utter_vegan_intent
+
+- story: Vegan Eats Intent
+  steps:
+  - intent: vegan_eats
+  - action: utter_vegan_eats_intent
+
+- story: Veganism Intent
+  steps:
+  - intent: Veganism
+  - action: utter_veganism_intent
+
+- story: First Vegan Term Intent
+  steps:
+  - intent: first_vegen_term
+  - action: utter_first_vegan_term_intent
+
+- story: First Vegan Intent
+  steps:
+  - intent: first_vegan
+  - action: utter_first_vegan_intent
+
+- story: Vegan Expensive Intent
+  steps:
+  - intent: vegan_expensive
+  - action: utter_vegan_expensive_intent
+
+- story: Vegan Food Intent
+  steps:
+  - intent: vegan_food
+  - action: utter_vegan_food_intent
+
+- story: Vegetarian and Vegan Intent
+  steps:
+  - intent: vegetarian_and_vegan
+  - action: utter_vegetarian_and_vegan_intent
+
+- story: Benefit of Vegan Intent
+  steps:
+  - intent: benefit_of_vegan
+  - action: utter_benefit_of_vegan_intent
+
+- story: Almond Milk Intent
+  steps:
+  - intent: almond_milk
+  - action: utter_almond_milk_intent
+
+- story: Honey Intent
+  steps:
+  - intent: honey
+  - action: utter_honey_intent
+
+- story: Why Go Vegan Intent
+  steps:
+  - intent: why_go_vegan
+  - action: utter_why_go_vegan_intent
+
+- story: Opposite Veganism Intent
+  steps:
+  - intent: Opposite_veganism
+  - action: utter_opposite_veganism_intent
+
+- story: Veganism Healthy Intent
+  steps:
+  - intent: Veganism_healthy
+  - action: utter_veganism_healthy_intent
+
+- story: Food Taste Good Intent
+  steps:
+  - intent: Food_taste_good
+  - action: utter_food_taste_good_intent
+
+- story: Protein Intent
+  steps:
+  - intent: protein
+  - action: utter_protein_intent
+
+- story: Soy Products Intent
+  steps:
+  - intent: Soy_products
+  - action: utter_soy_products_intent
+
+- story: Fish and Eggs Intent
+  steps:
+  - intent: fish_and_eggs
+  - action: utter_fish_and_eggs_intent
+
+- story: Iron and Calcium Intent
+  steps:
+  - intent: iron_and_calcium
+  - action: utter_iron_and_calcium_intent
+
+- story: 100% Vegan Person Intent
+  steps:
+  - intent: 100_percent_vegan_person
+  - action: utter_100_percent_vegan_person_intent
+
+- story: Beauty Products Intent
+  steps:
+  - intent: Beauty_products
+  - action: utter_beauty_products_intent
+
+- story: Avoid Ingredients in Beauty Intent
+  steps:
+  - intent: avoid_ingredients_beauty
+  - action: utter_avoid_ingredients_beauty_intent
+
+- story: Cruelty Free Beauty Product Intent
+  steps:
+  - intent: Cruelty_free_beauty_product
+  - action: utter_cruelty_free_beauty_product_intent
+
+- story: Skin Types Product Intent
+  steps:
+  - intent: skin_types_product
+  - action: utter_skin_types_product_intent
+
+- story: Beauty Products More Expensive Intent
+  steps:
+  - intent: Beauty_products_more_expensive
+  - action: utter_beauty_products_more_expensive_intent
+
+- story: All Types Beauty Product Intent
+  steps:
+  - intent: All_types_beauty_product
+  - action: utter_all_types_beauty_product_intent
+
+
+# #add clothing data 
+- story: Vegan Clothes 
+  steps:
+  - intent: cloths_vegan
+  - action: utter_cloths_vegan
+
+- story: Vegan Fashion 
+  steps:
+  - intent: fashion_vegan
+  - action: utter_fashion_vegan
+
+- story: Clothing Materials
+  steps:
+  - intent: clothing_materials_vegan
+  - action: utter_clothing_materials_vegan
+
+- story: Vegan and Non Vegan Clothing
+  steps:
+  - intent: vegan_and_non_vegan_clothing
+  - action: utter_vegan_and_non_vegan_clothing
+
+# - story: Identify vegan clothing brands 
+#   steps:
+#   - intent: Identity_vegan_clothing_brands
+#   - action: utter_Identity_vegan_clothing_brands
+
+- story: Vegan Eco Friendly Clothing options
+  steps:
+  - intent: vegan_clothing_option
+  - action: utter_vegan_clothing_option
+
+- story: Vegan Clothing Stylish 
+  steps:
+  - intent: vegan_clothing_stylish
+  - action: utter_vegan_clothing_stylish
+
+# - story: Color choices in vegan clothing
+#   steps:
+#   - intent: color_choices_in_vegan_clothing
+#   - action: utter_color_choices_in_vegan_clothing
+
+- story: Type of vegan clothing
+  steps:
+  - intent: type_of_vegan_clothing
+  - action: utter_type_of_vegan_clothing
+
+- story: Clothing Comforts
+  steps:
+  - intent: vegan_clothing_comforts
+  - action: utter_vegan_clothing_comforts
+
+# - story: Instructions for vegan clothing 
+#   steps:
+#   - intent: Instructions_for_vegan_clothing
+#   - action: utter_Instructions_for_vegan_clothing
+
+- story: Potential allergens in vegan clothing
+  steps:
+  - intent: potential_allergens_in_vegan_clothing
+  - action: utter_potential_allergens_in_vegan_clothing
+
+# - story: Certifications For vegan clothing
+#   steps:
+#   - intent: certifications_for_vegan_clothing
+#   - action: utter_certifications_for_vegan_clothing
+
+#add shoes
+- story: User asks about vegan shoes
+  steps:
+  - intent: ask_about_vegan_shoes
+  - action: utter_ask_about_vegan_shoes
+
+- story: User asks about materials of vegan shoes
+  steps:
+  - intent: ask_about_materials_of_vegan_shoes
+  - action: utter_ask_about_materials_of_vegan_shoes
+
+- story: User asks about durability of vegan shoes
+  steps:
+  - intent: ask_about_durability_of_vegan_shoes
+  - action: utter_ask_about_durability_of_vegan_shoes
+
+- story: User asks how to identify vegan shoes
+  steps:
+  - intent: ask_how_to_identify_vegan_shoes
+  - action: utter_ask_how_to_identify_vegan_shoes
+
+- story: User asks about styles of vegan shoes
+  steps:
+  - intent: ask_about_styles_of_vegan_shoes
+  - action: utter_ask_about_styles_of_vegan_shoes
+
+- story: User asks about eco-friendliness of vegan shoes
+  steps:
+  - intent: ask_about_eco_friendly_vegan_shoes
+  - action: utter_ask_about_eco_friendly_vegan_shoes
+
+- story: User asks about activity-specific vegan shoes
+  steps:
+  - intent: ask_about_activity_specific_vegan_shoes
+  - action: utter_ask_about_activity_specific_vegan_shoes
+
+- story: User asks about affordability of vegan shoes
+  steps:
+  - intent: ask_about_affordability_of_vegan_shoes
+  - action: utter_ask_about_affordability_of_vegan_shoes
+
+- story: User asks about caring for vegan shoes
+  steps:
+  - intent: care_for_clean_vegan_shoes
+  - action: utter_care_for_clean_vegan_shoes
+
+# - story: User asks about reputable brands for vegan shoes
+#   steps:
+#   - intent: reputable_brands_for_vegan_shoes
+#   - action: utter_reputable_brands_for_vegan_shoes
+
+- story: User asks about comfort and support of vegan shoes
+  steps:
+  - intent: comfort_and_support_of_vegan_shoes
+  - action: utter_comfort_and_support_of_vegan_shoes
+
+- story: User asks about materials of vegan shoes
+  steps:
+  - intent: materials_of_vegan_shoes
+  - action: utter_materials_of_vegan_shoes
+
+# - story: User asks about sustainability of vegan shoes
+#   steps:
+#   - intent: sustainable_eco_friendly_vegan_shoes
+#   - action: utter_sustainable_eco_friendly_vegan_shoes
+
+# vegan accessories 
+- story: Vegan Accessories Definition
+  steps:
+    - intent: vegan_accessories_definition
+    - action: utter_vegan_accessories_definition
+
+- story: Types of Vegan Accessories
+  steps:
+    - intent: types_of_vegan_accessories
+    - action: utter_types_of_vegan_accessories
+
+- story: Durability and Quality of Vegan Accessories
+  steps:
+    - intent: durability_and_quality_of_vegan_accessories
+    - action: utter_durability_and_quality
+
+- story: Where to Find Vegan Accessories
+  steps:
+    - intent: where_to_find_vegan_accessories
+    - action: utter_where_to_find_vegan_accessories
+
+- story: Sustainability of Vegan Accessories
+  steps:
+    - intent: sustainability_of_vegan_accessories
+    - action: utter_sustainability_of_vegan_accessories
+
+- story: Environmental Impact of Vegan Accessories
+  steps:
+    - intent: environmental_impact_of_vegan_accessories
+    - action: utter_environmental_impact_of_vegan_accessories
+
+# - story: Difference from Traditional Accessories
+#   steps:
+#     - intent: difference_from_traditional_accessories
+#     - action: utter_difference_from_traditional_accessories
+  
+
+- story: materials used in vegan accessories
+  steps:
+  - intent: materials_used_in_vegan_accessories
+  - action: utter_materials_used_in_vegan_accessories
+
+- story: cost of vegan accessories
+  steps:
+  - intent: cost_of_vegan_accessories
+  - action: utter_cost_of_vegan_accessories
+
+- story: styles and designs of vegan accessories
+  steps:
+  - intent: styles_and_designs_of_vegan_accessories
+  - action: utter_styles_and_designs_of_vegan_accessories
+
+# - story: recyclability of vegan accessories
+#   steps:
+#   - intent: recyclability_of_vegan_accessories
+#   - action: utter_recyclability_of_vegan_accessories
+
+- story: special care for vegan accessories
+  steps:
+  - intent: special_care_for_vegan_accessories
+  - action: utter_special_care_for_vegan_accessories
+
+- story: water resistance of vegan accessories
+  steps:
+  - intent: water_resistance_of_vegan_accessories
+  - action: utter_water_resistance_of_vegan_accessories
+
+- story: allergic reactions to vegan accessories
+  steps:
+  - intent: greet
+  - action: utter_second_greet
+  - intent: allergic_reactions_to_vegan_accessories
+  - action: utter_allergic_reactions_to_vegan_accessories
+
+# - story: suitability of vegan accessories for ethical or religious beliefs
+#   steps:
+#   - intent: greet
+#   - action: utter_second_greet
+#   - intent: suitability_of_vegan_accessories_for_ethical_or_religious_beliefs
+#   - action: utter_suitability_of_vegan_accessories_for_ethical_or_religious_beliefs
+
+- story: sustainability of vegan accessories
+  steps:
+  - intent: greet
+  - action: utter_second_greet
+  - intent: sustainability_of_vegan_accessories
+  - action: utter_sustainability_of_vegan_accessories
+
+- story: Smell Comparison
+  steps:
+    - intent: greet
+    - action: utter_second_greet
+    - intent: vegan_accessories_smell
+    - action: utter_vegan_accessories_smell
+
+# - story: Customization Inquiry
+#   steps:
+#     - intent: greet
+#     - action: utter_second_greet
+#     - intent: vegan_accessories_customization
+#     - action: utter_vegan_accessories_customization
+
+- story: Labor Practices Inquiry
+  steps:
+    - intent: greet
+    - action: utter_second_greet
+    - intent: vegan_accessories_labor_practices
+    - action: utter_vegan_accessories_labor_practices
+
+- story: Repair Inquiry
+  steps:
+    - intent: greet
+    - action: utter_second_greet
+    - intent: vegan_accessories_repair
+    - action: utter_vegan_accessories_repair
+
+
+# important question 
+# weight loss
+
+- story: ask about vegan diet and weight loss
+  steps:
+  - intent: ask_vegan_diet_weight_loss
+  - action: utter_ask_vegan_diet_weight_loss
+
+- story: ask about drinking tea and coffee on a plant-based diet
+  steps:
+  - intent: ask_drinking_tea_coffee_on_plant_based_diet
+  - action: utter_ask_drinking_tea_coffee_on_plant_based_diet
+
+# - story: inquire about vegan weight loss
+#   steps:
+#   - intent: vegan_weight_loss
+#   - action: utter_vegan_weight_loss
+
+- story: inquire about effects of switching to vegan diet
+  steps:
+  - intent: switch_to_vegan_diet_effects
+  - action: utter_switch_to_vegan_diet_effects
+
+- story: ask for weight loss tips
+  steps:
+  - intent: weight_loss_tips
+  - action: utter_weight_loss_tips
+#weight gain
+- story: inquire about gaining weight on a vegan diet
+  steps:
+  - intent: vegan_diet_weight_gain
+  - action: utter_vegan_diet_weight_gain
+
+- story: inquire about healthy weight gain on a vegan diet
+  steps:
+  - intent: vegan_weight_gain
+  - action: utter_vegan_weight_gain
+
+- story: ask about weight gain on a vegan diet
+  steps:
+  - intent: weight_gain_on_vegan_diet
+  - action: utter_weight_gain_on_vegan_diet
+
+- story: ask for weight gain tips
+  steps:
+  - intent: weight_gain_tips
+  - action: utter_weight_gain_tips
+
+
+# important question like  diesease, dairy , essential nutrients
+
+- story: Dairy Product Alternatives
+  steps:
+  - intent: dairy_product_alternatives
+  - action: utter_dairy_product_alternatives
+
+- story: Meat Alternative
+  steps:
+  - intent: common_meat_alternatives
+  - action: utter_common_meat_alternatives
+
+- story: Disease Managements
+  steps:
+  - intent: vegan_diet_prevent_disease
+  - action: utter_vegan_diet_prevent_disease
+
+- story: Diabetes
+  steps:
+  - intent: vegan_diet_lower_diabetes_risk
+  - action: utter_vegan_diet_lower_diabetes_risk
+
+- story: PCOD
+  steps:
+  - intent: vegan_diet_for_PCOS
+  - action: utter_vegan_diet_for_PCOS
+
+- story: Cardiovascular
+  steps:
+  - intent: veganism_help_reduce_cardiovascular_disease
+  - action: utter_veganism_help_reduce_cardiovascular_disease
+
+- story: Cancer
+  steps:
+  - intent: vegan_diet_prevent_cancer
+  - action: utter_vegan_diet_prevent_cancer
+
+- story: Alzheimer
+  steps:
+  - intent: best_diet_for_alzheimers_prevention
+  - action: utter_best_diet_for_alzheimers_prevention
+
+- story: Arthritis
+  steps:
+  - intent: best_diet_for_arthritis
+  - action: utter_best_diet_for_arthritis
+
+- story: Cholesterol
+  steps:
+  - intent: vegan_diet_benefits_cholesterol_reduction
+  - action: utter_vegan_diet_benefits_cholesterol_reduction
+
+- story: Thyroid
+  steps:
+  - intent: best_diet_for_thyroid_problems
+  - action: utter_best_diet_for_thyroid_problems
+
+- story: Blood Pressure
+  steps:
+  - intent: diet_and_blood_pressure_maintenance
+  - action: utter_diet_and_blood_pressure_maintenance
+
+- story: Essential Nutrients
+  steps:
+  - intent: essential_nutrients_from_vegan_diet
+  - action: utter_essential_nutrients_from_vegan_diet
+
+- story: Vegan Nutrient Requirements
+  steps:
+  - intent: vegan_nutrient_requirements
+  - action: utter_vegan_nutrient_requirements

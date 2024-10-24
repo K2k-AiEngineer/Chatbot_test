@@ -1,0 +1,135 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - action: utter_cweb
+
+- rule: Show video
+  steps:
+    - intent: show_video
+    - action: action_show_video
+
+- rule: Activate form
+  steps:
+  - intent: request_vegan_food_information
+  - action: name_form
+  - active_loop: name_form
+
+- rule: Submit form
+  condition:
+  - active_loop: name_form
+  steps:
+  - action: name_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: utter_vegan_option
+
+- rule: out-of-scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: select_personal
+  steps:
+  - intent: select_personal
+  - action: action_provide_vegan_details
+  
+
+- rule: select_family
+  steps:
+  - intent: select_family
+  - action: action_provide_vegan_details
+
+- rule: select_corporate
+  steps:
+  - intent: select_corporate
+  - action: action_provide_vegan_details
+
+
+- rule: two_member
+  steps:
+  - intent: two_member
+  - action: action_provide_vegan_sub_details
+  - action: actions_list
+
+- rule: four_member
+  steps:
+  - intent: four_member
+  - action: action_provide_vegan_sub_details
+  - action: actions_list
+
+- rule: six_member
+  steps:
+  - intent: six_member
+  - action: action_provide_vegan_sub_details
+  - action: actions_list
+
+- rule: more_member
+  steps:
+  - intent: more_member
+  - action: action_provide_vegan_sub_details
+  - action: actions_list
+#_________________________________________________
+- rule: employee_one_to_ten
+  steps:
+  - intent: employee_one_to_ten
+  - action: action_provide_vegan_subcorporate_details
+  - action: actions_list
+
+- rule: employee_one_to_twentyfive
+  steps:
+  - intent: employee_one_to_twentyfive
+  - action: action_provide_vegan_subcorporate_details
+  - action: actions_list
+
+- rule: employee_one_to_fifty
+  steps:
+  - intent: employee_one_to_fifty
+  - action: action_provide_vegan_subcorporate_details
+  - action: actions_list
+
+- rule: employee_more_than_fifty
+  steps:
+  - intent: employee_more_than_fifty
+  - action: action_provide_vegan_subcorporate_details
+  - action: actions_list
+
+#____________________________________________________
+
+- rule: whatapp
+  steps:
+  - intent: whatapps
+  - action: utter_whatapps
+
+- rule: emails
+  steps:
+  - intent: emails
+  - action: utter_emails
+
+- rule: weblink
+  steps:
+  - intent: weblink
+  - action: utter_weblink
+
+- rule: the script
+  steps:
+  - intent: contact_details
+  - action: utter_contact_details
+
+
+- rule: direct plans buy options
+  steps:
+  - intent: product_list
+  - action: actions_list

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K2K IT SUPPORT AND SOLUTIONS PVT.LTD.</title>
+</head>
+<body>
+  <img src="Project X copy.jpg" style="width: 100%; height: 100vh;" alt="A beautiful landscape">
+  <script>
+    (function () {
+      var e = document.createElement("script");
+      var t = document.head || document.getElementsByTagName("head")[0];
+      e.src = "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js";
+      // Replace 1.x.x with the version that you want
+      e.async = true;
+      e.onload = function () {
+        window.WebChat.default({
+          title: 'Chatbot K2K',
+          subtitle:'I am a bot 🤖, powered by K2K IT ',
+          initPayload: '/greets',
+          customData: { language: "en" },
+          socketUrl: "http://localhost:5005",
+          // add other props here
+          showMessageDate: true,
+          profileAvatar:"https://vegan-dietitian.com/images/logo/logo.png"
+        }, null);
+      };
+      t.insertBefore(e, t.firstChild);
+    })();
+    localStorage.clear()
+  </script>
+</body>
+</html>

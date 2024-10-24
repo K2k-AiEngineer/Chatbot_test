@@ -1,0 +1,653 @@
+version: '3.1'
+intents:
+- affirm
+- bot_challenge
+- deny
+- goodbye
+- greet
+- greets
+- mood_great
+- mood_unhappy
+- about_chatbot
+- out_of_scope     # for out of scope
+
+- request_vegan_food_information   # show product plans
+
+- select_corporate
+- select_family
+- select_personal
+- vegan_option
+
+- two_member
+- four_member
+- six_member
+- more_member
+
+# for Corporate sub categories 
+- employee_one_to_ten
+- employee_one_to_twentyfive
+- employee_one_to_fifty
+- employee_more_than_fifty
+
+- product_list    # show carousel
+- buynow
+- contact_details
+- show_video
+
+
+- whatapps
+- weblink
+- emails 
+
+# show more FAQs
+- vegan
+- vegan_eats
+- Veganism
+- first_vegen_term
+- first_vegan
+- vegan_expensive
+- vegan_food
+- vegetarian_and_vegan
+- benefit_of_vegan
+- almond_milk
+- honey
+- why_go_vegan
+- Opposite_veganism
+- Veganism_healthy
+- Food_taste_good
+- protein
+- Soy_products
+- fish_and_eggs
+- iron_and_calcium
+- 100_percent_vegan_person
+- Beauty_products
+- avoid_ingredients_beauty
+- Cruelty_free_beauty_product
+- skin_types_product
+- Beauty_products_more_expensive
+- All_types_beauty_product
+
+
+
+
+
+# add clothing
+- cloths_vegan
+- fashion_vegan
+- clothing_materials_vegan
+- vegan_and_non_vegan_clothing
+# - Identity_vegan_clothing_brands
+- vegan_clothing_option
+# - color_choices_in_vegan_clothing
+- type_of_vegan_clothing
+- vegan_clothing_comforts
+# - Instructions_for_vegan_clothing
+- potential_allergens_in_vegan_clothing
+# - certifications_for_vegan_clothing
+
+#add shoes
+- ask_about_vegan_shoes
+- ask_about_materials_of_vegan_shoes
+- ask_about_durability_of_vegan_shoes
+- ask_how_to_identify_vegan_shoes
+- ask_about_styles_of_vegan_shoes
+- ask_about_eco_friendly_vegan_shoes
+- ask_about_activity_specific_vegan_shoes
+- ask_about_affordability_of_vegan_shoes
+- care_for_clean_vegan_shoes
+# - reputable_brands_for_vegan_shoes
+- comfort_and_support_of_vegan_shoes
+- materials_of_vegan_shoes
+# - sustainable_eco_friendly_vegan_shoes
+
+#add vegan assec
+
+- vegan_accessories_definition
+- types_of_vegan_accessories
+- durability_and_quality_of_vegan_accessories
+- where_to_find_vegan_accessories
+- sustainability_of_vegan_accessories
+- environmental_impact_of_vegan_accessories
+# - difference_from_traditional_accessories
+- materials_used_in_vegan_accessories
+- cost_of_vegan_accessories
+- styles_and_designs_of_vegan_accessories
+# - recyclability_of_vegan_accessories
+- special_care_for_vegan_accessories
+- water_resistance_of_vegan_accessories
+# - allergic_reactions_to_vegan_accessories
+# - suitability_of_vegan_accessories_for_ethical_or_religious_beliefs
+- vegan_accessories_smell
+# - vegan_accessories_customization
+- vegan_accessories_labor_practices
+- vegan_accessories_repair
+
+
+#important question like weight loss, gain, diesease, essential nutrients
+- ask_vegan_diet_weight_loss
+- ask_drinking_tea_coffee_on_plant_based_diet
+- switch_to_vegan_diet_effects
+- weight_loss_tips
+- vegan_diet_weight_gain
+- vegan_weight_gain
+- weight_gain_on_vegan_diet
+- weight_gain_tips
+- dairy_product_alternatives
+- common_meat_alternatives
+- vegan_diet_prevent_disease
+- vegan_diet_lower_diabetes_risk
+- vegan_diet_for_PCOS
+- veganism_help_reduce_cardiovascular_disease
+- vegan_diet_prevent_cancer
+- best_diet_for_alzheimers_prevention
+- best_diet_for_arthritis
+- vegan_diet_benefits_cholesterol_reduction
+- best_diet_for_thyroid_problems
+- diet_and_blood_pressure_maintenance
+- essential_nutrients_from_vegan_diet
+- vegan_nutrient_requirements
+
+
+entities:
+- first_name
+- last_name
+- phone_number
+- email
+- city
+- age
+
+slots:
+  first_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        entity: first_name
+        conditions:
+         - active_loop: name_form
+           requested_slot: first_name
+  last_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        entity: last_name
+        conditions:
+         - active_loop: name_form
+           requested_slot: last_name
+  phone_number:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        entity: phone_number
+        conditions:
+         - active_loop: name_form
+           requested_slot: phone_number 
+
+  email:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        entity: email
+        conditions:
+         - active_loop: name_form
+           requested_slot: email
+  city:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        entity: city
+        conditions:
+         - active_loop: name_form
+           requested_slot: city
+  age:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        entity: age
+        conditions:
+         - active_loop: name_form
+           requested_slot: age
+           
+forms:
+  name_form:
+    required_slots:
+      - first_name
+      - last_name
+      - phone_number
+      - email
+      - city
+      - age
+
+# end form data
+responses:
+  utter_greet:
+  - text: 👋 Welcome to our website! 🌐
+  utter_second_greet:
+  - text: Hey! How can i help you?
+  utter_buynow:   # change name when you add vegan product
+  - text: "[Click](https://vegan-dietitian.com/)"
+  utter_whatapps:
+  - text: "[Click](https://wa.me/919799817360)"
+  utter_emails:
+  - text: "[Click](mailto:2020pgiadprem09@gmail.com)"
+  utter_weblink:   # change name when you add vegan product
+  - text: "[Click](https://vegan-dietitian.com/)"
+  # utter_contact_details:
+  # - text: "Go to the links:\n
+  #           - Website 🌐 [Click](https://vegan-dietitian.com/)\n
+  #           - Whatsapp📱 [Click](https://vegan-dietitian.com/)\n
+  #           - Email ✉️ [Click](https://vegan-dietitian.com/)\n"
+
+  utter_contact_details:
+    - text: |
+        Please select one suitable option for connecting.
+      buttons:
+        - title: "Website 🌐"
+          payload: "/weblink"
+        - title: " Whatsapp📱"
+          payload: "/whatapps"
+        - title: "Email ✉️"
+          payload: "/emails"
+
+  utter_about_chatbot:  # only check for begin purpose
+  - text: "How to use Chatbot! \n [click here 🔍](https://www.youtube.com/watch?v=1600yYNGngg&list=PL7ersPsTyYt2ovOENiCfuId8vuU3P-ngT&index=5)"
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.pinimg.com/originals/6f/45/94/6f4594cb209955e086108d70a10c7ad4.png
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!👍😄
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot 🤖, powered by K2K IT 
+    image: https://vegan-dietitian.com/assets/img/logo.png
+  utter_cweb:
+  - text: "For more details, [click here 🔍](https://vegan-dietitian.com/)."
+  utter_out_of_scope:
+  - text: Sorry, I didn't get what you said.Please rephrase what you said.
+
+
+  # add main data_________________________________________________
+  utter_vegan_intent:
+  - text: "Veganism🌱 is a way of living that doesn't involve eating or using any products from animals, such as food (meat 🍗, dairy 🥛, eggs🥚), clothing 👕 (leather), or other items (honey).[click for more](https://vegan-dietitian.com/)"
+  - text: "Being vegan is more than just a diet, it’s a commitment to avoiding animal products in every part of life. This means not eating meat, dairy, or eggs, as well as not using materials like leather or honey.[click for more](https://vegan-dietitian.com/)"
+  - text: "Living a vegan lifestyle means avoiding consuming or utilizing any animal products, including food (meat, dairy, eggs), clothing (leather), and other items (honey[click for more](https://vegan-dietitian.com/)"
+  utter_vegan_eats_intent:
+  - text: "A vegan lifestyle revolves around consuming only plant-based foods like fruits 🍎, vegetables 🥦, grains🌾, and nuts🌰. Vegans don’t eat food derived from animals, including dairy products, eggs, and any other ingredients of animal origin.[click for more](https://vegan-dietitian.com/)"
+  utter_veganism_intent:
+  - text: "The main idea behind switching to a vegan diet is to focus on cruelty-free and sustainable options. Their meals consist of fruits🍎, vegetables🥦, grains🌾 , legumes, nuts🥜, and seeds🌰.[click for more](https://vegan-dietitian.com/)"
+  - text: "Switching to a plant-based diet is all about adopting cruelty-free and eco-friendly food options. Vegans focus on meals filled with fruits, veggies, grains, legumes, nuts, and seeds, which not only benefit their health but also promote environmental and ethical awareness.[click for more](https://vegan-dietitian.com/)"
+  - text: "The main reason behind adopting a vegan diet is to prioritize cruelty-free and sustainable choices. Vegans typically eat a variety of fruits, vegetables, grains, legumes, nuts, and seeds. [click for more](https://vegan-dietitian.com/)"
+  utter_first_vegan_term_intent:
+  - text: "Donald Watson coined the term vegan in 1944, founding the Vegan Society in England. One of the earliest followers of a vegan diet was the Arab philosopher and poet Al-Maʿarr who abstained from animal products for his health and belief in the transmigration of souls.[click for more](https://vegan-dietitian.com/)"
+  - text: "The term vegan was introduced by Donald Watson in 1944, marking the inception of the Vegan Society in England. One of the earliest followers of a vegan diet was the Arab philosopher and poet Al-Maʿarr who abstained from animal products for his health and belief in the transmigration of souls.[click for more](https://vegan-dietitian.com/)"
+  - text: "The word vegan was first coined by Donald Watson in 1944 when he founded the Vegan Society in England. One of the earliest followers of a vegan diet was the Arab philosopher and poet Al-Maʿarr who abstained from animal products for his health and belief in the transmigration of souls.[click for more](https://vegan-dietitian.com/)"
+  utter_first_vegan_intent:
+  - text: "Donald Watson coined the term vegan in 1944, founding the Vegan Society in England. One of the earliest followers of a vegan diet was the Arab philosopher and poet Al-Maʿarr who abstained from animal products for his health and belief in the transmigration of souls.[click for more](https://vegan-dietitian.com/)"
+  - text: "The term vegan was introduced by Donald Watson in 1944, marking the inception of the Vegan Society in England. One of the earliest followers of a vegan diet was the Arab philosopher and poet Al-Maʿarr who abstained from animal products for his health and belief in the transmigration of souls.[click for more](https://vegan-dietitian.com/)"
+  - text: "The word vegan was first coined by Donald Watson in 1944 when he founded the Vegan Society in England. One of the earliest followers of a vegan diet was the Arab philosopher and poet Al-Maʿarr who abstained from animal products for his health and belief in the transmigration of souls.[click for more](https://vegan-dietitian.com/)"
+  utter_vegan_expensive_intent:
+  - text: "A vegan lifestyle can be budget-friendly💰 if you focus on eating whole, unprocessed foods such as grains, beans, and vegetables. However, some specialty vegan products, like meat substitutes and dairy alternatives, can be more expensive than their non-vegan equivalents.[click for more](https://vegan-dietitian.com/)"
+  - text: "Embracing a budget-friendly vegan lifestyle is attainable by prioritizing whole unprocessed foods like grains, beans, and vegetables. However, some specialty vegan products, like meat substitutes and dairy alternatives, can be more expensive than their non-vegan equivalents. But with mindful shopping, veganism can align with both ethical and budget-conscious choices.[click for more](https://vegan-dietitian.com/)"
+  - text: "It's possible to live a budget-friendly vegan lifestyle by choosing whole, unprocessed foods like grains, beans, and vegetables. However, some specialty vegan products, like meat substitutes and dairy alternatives, can be more expensive than their non-vegan equivalents.[click for more](https://vegan-dietitian.com/)"
+  utter_vegan_food_intent:
+  - text: "Vegan foods exclude all animal-derived ingredients, including meat, dairy, eggs, and honey. Instead, they focus on plant-based foods like fruits, vegetables, grains, nuts, seeds, and substitutes like tofu and tempeh🥗.[click for more](https://vegan-dietitian.com/)"
+  - text: "Following of vegan diet means steering clear of all ingredients meat, dairy, eggs, and honey. This also includes avoiding gelatin and some food additives. Instead, veganism includes plant-based foods like fruits, vegetables, grains, nuts, and seeds, as well as protein alternatives like tofu and tempeh.[click for more](https://vegan-dietitian.com/)"
+  utter_vegetarian_and_vegan_intent:
+  - text: "Vegetarians abstain from meat, fish 🐟, and poultry, while vegans avoid 🚫 all animal products, including dairy, eggs🥚, and honey.[click for more](https://vegan-dietitian.com/)"
+  utter_benefit_of_vegan_intent:
+  - text: "A vegan diet may have several benefits💪🥗, such as helping you lose excess🏋️‍♂️ weight, lowering the risk of diabetes, improving kidney function, and lowering blood sugar levels among others.[click for more](https://vegan-dietitian.com/)"
+  utter_almond_milk_intent:
+  - text: "As almond milk🥛is made from seeds and includes the typical seeds that are not nuts, they are completely vegan.[click for more](https://vegan-dietitian.com/)"
+  - text: "Almond milk is made from seeds and contains seeds that are not nuts, making it suitable for vegans.[click for more](https://vegan-dietitian.com/)"
+  utter_honey_intent:
+  - text: "Honey is not considered as vegan as it’s a product produced by bees, which is an animal-derived substance.[click for more](https://vegan-dietitian.com/)"
+  utter_why_go_vegan_intent:
+  - text: "Going vegan 🌿 is one of the best ways to stop animal cruelty. By refusing to pay for animal products you can reduce the demand for them, which ensures that fewer animals are bred to suffer and die in farms and slaughterhouses.[click for more](https://vegan-dietitian.com/)"
+  utter_opposite_veganism_intent:
+  - text: "Carnism is the opposite of veganism. 'Carn' means 'flesh' or 'of the flesh' and 'ism' refers to a belief system.[click for more](https://vegan-dietitian.com/)"
+  utter_veganism_healthy_intent:
+  - text: "Yes, veganism can provide a healthy lifestyle if planned thoughtfully to include the necessary nutrients from plant-based sources. However, it requires attention to essential nutrients like vitamin B12, iron, and omega-3 fatty acids.[click for more](https://vegan-dietitian.com/)"
+  utter_food_taste_good_intent:
+  - text: "Yes, vegan food can taste delicious when prepared well, offering a variety of flavors and textures. The secret lies in using herbs, spices, and plant-based ingredients for satisfying meals.[click for more](https://vegan-dietitian.com/)"
+  utter_protein_intent:
+  - text: "Vegans can obtain sufficient protein through a well-rounded diet that includes sources such as beans, tofu, and quinoa.[click for more](https://vegan-dietitian.com/)"
+  utter_soy_products_intent:
+  - text: "Soybeans and soy foods may reduce the risk of a range of health problems, including cardiovascular disease, stroke, coronary heart disease (CHD), and some cancers, as well as improving bone health.[click for more](https://vegan-dietitian.com/)"
+  utter_fish_and_eggs_intent:
+  - text: "Fish and eggs are excluded from vegan and vegetarian diets for health💪, environment🌍, ethical, and other personal 💚 reasons. This is because the production of these ingredients is considered to be unethical, exploitative, or harmful to the health of the animals.[click for more](https://vegan-dietitian.com/)"
+  utter_iron_and_calcium_intent:
+  - text: "It is possible to meet your iron needs through plant-based sources, such as lentils, and spinach. For calcium, fortified plant milk, tofu, and leafy greens can provide sufficient intake.[click for more](https://vegan-dietitian.com/)"
+  utter_100_percent_vegan_person_intent:
+  - text: "It is nearly possible to be 100% vegan💯🌱. Vegans don’t eat any food that only contains animal products.  That means their diet excludes all meat, seafood, poultry, and dairy as well as honey or foods with additives that come from animals.[click for more](https://vegan-dietitian.com/)"
+  utter_beauty_products_intent:
+  - text: "The truth is, vegan products are better for the skin without animal ingredients, especially if you’re someone with sensitive skin and condition-prone skin. Animal’s ingredients can be harsh and clog pores, so vegan products are soothing alternatives.[click for more](https://vegan-dietitian.com/)"
+  utter_avoid_ingredients_beauty_intent:
+  - text: "Avoid animal-derived ingredients like carmine, lanolin, and beeswax. Additionally, watch out for non-vegan additives such as collagen, glycerin sourced from animal fat, and keratin.[click for more](https://vegan-dietitian.com/)"
+  utter_cruelty_free_beauty_product_intent:
+  - text: "To make sure a beauty product is vegan and cruelty-free, you’ll need to look for certification from trusted organizations like PETA or Leaping Bunny and go through the list of ingredients to make sure they do not contain anything derived from animals.[click for more](https://vegan-dietitian.com/)"
+  utter_skin_types_product_intent:
+  - text: "Fortunately, apart from being eco-friendly, they are good for your skin and the planet, vegan products are also good for your health. They provide antioxidants, minerals, and vitamins straight from Mother Nature.[click for more](https://vegan-dietitian.com/)"
+  utter_beauty_products_more_expensive_intent:
+  - text: "Cruelty-free brands often prioritize the use of ethically sourced, high-quality ingredients that are not tested on animals. These ingredients come from sustainable and environmentally friendly sources.[click for more](https://vegan-dietitian.com/)"
+  utter_all_types_beauty_product_intent:
+  - text: "Yes, vegan alternatives are available for all types of beauty products, covering makeup, skincare, and healthcare, offering cruelty-free options without compromising quality or effectiveness.[click for more](https://vegan-dietitian.com/)"
+
+
+ # add clothing 
+  utter_cloths_vegan:
+  - text: "clothes can also be vegan if they are made of materials that don’t include any animal substances such as silk, leather, or wool 🚫🐑🐄, instead, you should opt for other alternatives like cotton, synthetic fabrics, or hemp 🌱👕.[click for more](https://vegan-dietitian.com/)"
+  utter_fashion_vegan:
+  - text: "Vegan fashion is related to clothing and accessories made without any substances such as silk, leather, or fur 🚫🐑🌿, which helps to encourage cruelty-free and sustainable alternatives like synthetics and plant-based materials 🌱[click for more](https://vegan-dietitian.com/)"
+  utter_clothing_materials_vegan:
+  - text: "The common materials in vegan clothing include cork 🌳, hemp 🌱, organic cotton 🌿, bamboo 🎍, and synthetic fibers like nylon and polyester derived from non-animal sources. 🚫[click for more](https://vegan-dietitian.com/)"
+  utter_vegan_and_non_vegan_clothing:
+  - text: "Vegan clothing can be more expensive due to its specialized material 💸, although its price might depend on the brand and quality, often aligning with ethical principles. 🌱[click for more](https://vegan-dietitian.com/)"
+  # utter_Identity_vegan_clothing_brands:
+  # - text: "If you’re looking for ways to find out whether the product does not contain animal-derived ingredients, then you should check for certifications such as the “PETA’s Vegan Approved” logo, ensuring products are free from animal-derived substances. 🌱👕🚫"
+  utter_vegan_clothing_option:
+  - text: "Some sustainable and eco-friendly options within vegan clothing include garments based on organic cotton 🌱, bamboo 🎋, hemp 🌿, or recycled materials such as nylon ♻️ and polyester. These materials are less polluting to our environment due to their lesser dependence on fossil fuels in comparison with other fabrics.[click for more](https://vegan-dietitian.com/)"
+  utter_color_choices_in_vegan_clothing:
+  - text: "There are various limitations on the color choices inside the vegan clothing options. However, the availability might vary based on dyeing materials and methods included. Always check the brand or product details.[click for more](https://vegan-dietitian.com/)"
+  
+  utter_vegan_clothing_stylish:
+  - text: "Vegan clothing can be stylish and offers you a wide range of fashionable and cruelty-free options that cater to various tastes or choices without harming the animals. 🌱👗 Explore trendy, animal-friendly alternatives that align with your values and fashion preferences. [click for more](https://vegan-dietitian.com/)"
+  utter_type_of_vegan_clothing:
+  - text: "Many vegan alternatives are available for clothing, accessories, and footwear that are synthetic leather, recycled fibers, and organic cotton, offering sustainable living and cruelty-free options in every wardrobe. 🌱👗👟👜♻️[click for more](https://vegan-dietitian.com/)"
+  utter_vegan_clothing_comforts:
+  - text: "Fashion enthusiasts may opt for vegan clothing materials such as cotton 🌱 and bamboo 🎋 that offer breathability 💨 and comfort ☁️ as compared to wool 🐑 or silk 🕊️.[click for more](https://vegan-dietitian.com/)"
+  # utter_Instructions_for_vegan_clothing:
+  # - text: "Vegan clothing might require gentle washing with 🌿 plant-based ingredients and air-drying ☀️ to maintain fabric integrity and eco-consciousness. Keep a check on the labels for the specific care instructions to ensure sustainability and longevity."
+  utter_potential_allergens_in_vegan_clothing:
+  - text: "Some synthetic vegan materials might include allergens such as formaldehyde or dyes. However, natural materials such as hemp or cotton 🌿 are considered to be a safer option for allergy-prone individuals.[click for more](https://vegan-dietitian.com/)"
+  # utter_certifications_for_vegan_clothing:
+  # - text: "If you’re looking for ways to find out whether the product does not contain animal-derived ingredients, then you should check for certifications such as the “PETA’s Vegan Approved” logo 🌱, ensuring products are free from animal-derived substances."
+#add shoes
+  utter_ask_about_vegan_shoes:
+    - text: "Shoes 🥾 can be vegan and are made without animal-derived substances such as leather or suede, using synthetic alternatives like faux leather or canvas. It's important to check product descriptions or labels for verification. 👟🐮[click for more](https://vegan-dietitian.com/)"
+
+  utter_ask_about_materials_of_vegan_shoes:
+    - text: "The vegan shoes are made up of materials like plant-based fibers such as hemp or cotton, and recycled materials, synthetic microfibers that abstain from the use of animal substances like leather or suede. 🌿♻️👞[click for more](https://vegan-dietitian.com/)"
+
+  utter_ask_about_durability_of_vegan_shoes:
+    - text: "Vegan shoes👟 are durable just like leather ones, which mainly depends on the substance used and the construction quality. Other vegan alternatives like plant-based materials and synthetic leather🌍👠💪 can offer comparable durability to traditional leather.[click for more](https://vegan-dietitian.com/) "
+
+  utter_ask_how_to_identify_vegan_shoes:
+    - text: "To identify vegan shoes, make sure that the material label for synthetic or plant-based components consists of no animal-based substances🏷️ in its construction. Furthermore, check the vegan certification symbols for clarification. 🏷️🌱🚫🐾[click for more](https://vegan-dietitian.com/)"
+
+  utter_ask_about_styles_of_vegan_shoes:
+    - text: "Vegan shoes🥾 are available in a variety of styles and designs that meet diverse needs and preferences👡 while maintaining the quality of being cruelty-free. 👢🌈👡[click for more](https://vegan-dietitian.com/)"
+
+  utter_ask_about_eco_friendly_vegan_shoes:
+    - text: "Vegan shoes👟 can be eco-friendly depending on the production methods or the material used. Check the brands and other materials like recycled♻️ plastics or plant-based alternatives. 🌎👞[click for more](https://vegan-dietitian.com/)"
+
+  utter_ask_about_activity_specific_vegan_shoes:
+    - text: "You can find vegan shoes for specific activities like running or hiking that provide support🏃‍♀️ and durability without any use of animal-based substances. 🏃‍♀️🥾🌿[click for more](https://vegan-dietitian.com/)"
+
+  utter_ask_about_affordability_of_vegan_shoes:
+    - text: "The affordability of vegan shoes👟 depends on several factors like quality or brand, but they may often be comparatively priced higher. Factors like brand💲, materials used, and manufacturing processes might influence the price of the shoes whether vegan or leather. 💲🌱👟[click for more](https://vegan-dietitian.com/)"
+
+  utter_care_for_clean_vegan_shoes:
+    - text: "To clean your vegan shoes👞, wipe with a damp cloth and mild soap, then air dry. Additionally🧽, for maintenance, you can use a shoe brush and a suitable non-toxic shoe conditioner. 👞✨[click for more](https://vegan-dietitian.com/)"
+
+  # utter_reputable_brands_for_vegan_shoes:
+  #   - text: "There are reputable brands known for their quality vegan shoe collections like Matt & Nat and Beyond Skin. 👞🌱🛍️"
+
+  utter_comfort_and_support_of_vegan_shoes:
+    - text: "Vegan shoes can provide you with support and comfort compared to traditional or leather shoes👢. With advanced materials used, the shoes offer alternatives that are mainly for cruelty-free options. 🥿🌱👟[click for more](https://vegan-dietitian.com/)"
+
+  utter_materials_of_vegan_shoes:
+    - text: "The vegan shoes👢 consist of plant-based fibers such as hemp or cotton, recycled materials, synthetic microfibers that abstain from the use of animal substances like leather or suede. 🌿♻️👠[click for more](https://vegan-dietitian.com/)"
+
+  # utter_sustainable_eco_friendly_vegan_shoes:
+  #   - text: "Some sustainable and eco-friendly 🌍👞♻️ options within vegan shoes👞 are less polluting to our environment🌍 due to their lesser dependence on fossil fuels in comparison with other shoes. "
+
+# vegan accessories 
+  utter_vegan_accessories_definition:
+    - text: "🌿 Vegan accessories are products made without animal-based materials like silk, leather, fur, or wool. They are crafted from alternatives such as synthetic leather, recycled materials, and plant-based fabrics. Embrace the eco-friendly and compassionate choice! 🌱👜💚[click for more](https://vegan-dietitian.com/)"
+  utter_types_of_vegan_accessories:
+    - text: "👜 Explore a wide range of vegan accessories including belts, shoes 👠, watches, jewelry, handbags, cosmetics, and toiletries. Make a style statement with cruelty-free and sustainable fashion! 🌟🌿💍[click for more](https://vegan-dietitian.com/)"
+  utter_durability_and_quality:
+    - text: "💪 Many vegan accessories are designed to be high quality and durable, mimicking the look and feel of real leather🌱👛 while being more affordable and eco-conscious. Embrace durability and sustainability! ♻️[click for more](https://vegan-dietitian.com/)"
+  utter_where_to_find_vegan_accessories:
+    - text: "🌎 Find vegan accessories at numerous retailers specializing in sustainable and cruelty-free products. Online stores offer a vast selection, and mainstream retailers are increasingly offering vegan options. Embrace ethical shopping! 🛍️🌿🌱[click for more](https://vegan-dietitian.com/)"
+  utter_sustainability_of_vegan_accessories:
+    - text: "♻️ Vegan accessories use sustainable materials, reducing reliance on animal agriculture and minimizing environmental impact. Be a part of the solution for a more sustainable fashion industry! 🌍🌱🌿[click for more](https://vegan-dietitian.com/)"
+  utter_environmental_impact_of_vegan_accessories:
+    - text: "🌱 Vegan accessories are more environmentally friendly 🌎💚than animal-derived counterparts, reducing the ecological ♻️footprint of fashion choices. Make a positive impact with every purchase! ♻️[click for more](https://vegan-dietitian.com/)"
+  # utter_difference_from_traditional_accessories:
+  #   - text: "🐾 Vegan accessories are made of cruelty-free and environmentally friendly materials, unlike traditional accessories that use leather, suede, or other animal-derived materials. Choose compassion! 🌿💚👜"
+  utter_materials_used_in_vegan_accessories:
+    - text: "🌿 Common materials in vegan accessories include synthetic leather (such as polyurethane or PVC), 🛍️ recycled fabrics, and innovative plant-based substances like cork or pineapple leather. Embrace innovation in fashion! 🌱[click for more](https://vegan-dietitian.com/)"
+  utter_cost_of_vegan_accessories:
+    - text: "Prices 💸 of vegan accessories vary by brand and materials used, but they are generally competitive with traditional accessories. Enjoy affordable and guilt-free shopping! 🌿💲[click for more](https://vegan-dietitian.com/)"
+  utter_styles_and_designs_of_vegan_accessories:
+    - text: "🌟 Vegan accessories come in a variety of styles and designs to suit 👗 different preferences and occasions. Express your unique personality with cruelty-free fashion! 👒🌿[click for more](https://vegan-dietitian.com/)"
+  # utter_recyclability_of_vegan_accessories:
+  #   - text: " Many vegan accessories are made from recyclable materials that can be recycled at the end of their lifecycle🔄, promoting circular fashion and reducing waste. Make sustainable choices! ♻️🌱👜"
+  utter_special_care_for_vegan_accessories:
+    - text: "🧼 While some vegan materials may require specific care, vegan accessories are generally easy to maintain. Enjoy hassle-free and sustainable fashion! 🌿👝🌱[click for more](https://vegan-dietitian.com/)"
+  utter_water_resistance_of_vegan_accessories:
+    - text: "💧 Certain vegan materials like synthetic leather can be water-resistant or waterproof depending 🌧️🌱 on their manufacturing process, providing practical and stylish options for all weather conditions! 👢[click for more](https://vegan-dietitian.com/)"
+  utter_allergic_reactions_to_vegan_accessories:
+    - text: " Vegan accessories are hypoallergenic and less likely to cause allergic reactions compared to animal-derived materials like leather. Choose skin-friendly and compassionate fashion! 🌿💚😊[click for more](https://vegan-dietitian.com/)"
+  # utter_suitability_of_vegan_accessories_for_ethical_or_religious_beliefs:
+  #   - text: "✨ Vegan accessories align with ethical and religious beliefs advocating kindness towards animals and the environment. Make fashion choices that reflect your values! 🌱🙏💚"
+  utter_vegan_accessories_smell:
+    - text: "🌿 Vegan accessories are made from synthetic materials and usually do not have the same smell as animal leather. Embrace cruelty-free elegance! 👃❌[click for more](https://vegan-dietitian.com/)"
+  # utter_vegan_accessories_customization:
+  #   - text: "Many vegan accessory brands offer customization options, allowing customers to personalize items according to their preferences🌿💚🖌️. Express your unique style with personalized vegan accessories! "
+  utter_vegan_accessories_labor_practices:
+    - text: "🤝 Ethical vegan accessory brands support fair labor 👫practices, ensuring workers are paid fairly and treated ethically. Choose brands that prioritize people and planet! 💚[click for more](https://vegan-dietitian.com/)"
+  utter_vegan_accessories_repair:
+    - text: " Yes, many vegan accessories can be repaired 🔧, extending their lifespan and reducing waste. Embrace sustainability🌿👝 by choosing repairable fashion! ♻️[click for more](https://vegan-dietitian.com/)"
+#____________________________________________________________________________________________
+# important question 
+# weight loss
+  utter_ask_vegan_diet_weight_loss:
+  - text: "If you’re following a vegan diet to lose weight, consuming a lot of fiber-rich food is preferable. Fiber can help you keep feeling full for longer and won’t make you feel hungry that often. Thus, vegan diets 🥗 help to reduce body weight considerably. 🥗🌱[click for more](https://vegan-dietitian.com/)"
+
+  utter_ask_drinking_tea_coffee_on_plant_based_diet:
+  - text: "Yes, you can drink soymilk tea 🍵 or black coffee ☕️. Drinking coffee can be a healthy routine for your vegan diet. It consists of a lot of antioxidants and B vitamins. ☕️🌱🍵[click for more](https://vegan-dietitian.com/)"
+
+  # utter_vegan_weight_loss:
+  # - text: "A vegan diet excludes chemicals, sugars, and preservatives that are usually present in processed foods. However, weight loss is only fully achievable if you only follow a WFPB diet. 🥦🥒🍅"
+
+  utter_switch_to_vegan_diet_effects:
+  - text: "To increase the levels of vitamins, minerals, and fiber substitute meat and other animal products from your diet with pulses, plant-based 🌽🥑 whole grains, healthy oils 🥜, and nuts to decrease your intake of unhealthy fats and processed meats. This will help to maintain a healthy body. 🥜🌽🥑[click for more](https://vegan-dietitian.com/)"
+
+  utter_weight_loss_tips:
+  - text: "The following are necessary tips to keep in mind to reduce weight loss: \n
+            - Make sure that you get enough number of calories in a day.🥗🍽️🏋️‍♂️\n
+            - Try to eat small and frequent meals throughout the day.\n
+            - Limit your intake of meat substitutes.\n
+            - Avoid binging on desserts 🥗 \n
+            - Limit your meat substitutes.🍽️\n
+            - [click for more](https://vegan-dietitian.com/)"
+
+
+#____________________________________________________________________________________________
+# important question 
+# weight gain
+  utter_vegan_diet_weight_gain:
+  - text: "Yes, with the vegan diet, you can gain weight as long as you consume enough nutrients & calories. 🌱 Whole food & plant-based diets like nuts, seeds, fruits, 🥑 vegetables & whole grains provide essential nutrients that promote healthy weight gain. 🌽🥦[click for more](https://vegan-dietitian.com/)"
+
+  utter_vegan_weight_gain:
+  - text: " Vegans can easily gain weight by consuming more calories than they burn daily. 🌿 You can add calorie-dense food & protein-rich foods to your diet like dried fruits, seeds, nuts, 🥜 whole-grain bread, lentils, beans & avocado 🥑 to help you build muscle mass. 💪[click for more](https://vegan-dietitian.com/)"
+
+  utter_weight_gain_on_vegan_diet:
+  - text: "A person can gain the amount of weight on a vegan diet depending on several factors such as calorie intake, age, gender, and activity level. 🌱 However, one can expect to gain weight up to 1 to 2 pounds with a vegan diet and regular exercise routine. 🏋️‍♂️[click for more](https://vegan-dietitian.com/)"
+
+  
+  utter_weight_gain_tips:
+  - text: "To successfully gain weight as a vegan, you need to follow certain steps: 🌿 \n
+            - Increase your caloric intake to consume more calories than what your body burns, resulting in a positive energy balance. ⚖️\n
+            - Concentrate on focusing an adequate protein intake for building muscle growth. 💪\n
+            - Eat calorie-dense food, such as healthy fats i.e. nuts, seeds, avocados, and olive oil that help you achieve a caloric surplus. 🥑🌰\n
+            - Regularly consume snacks and meals throughout the whole day to increase your daily caloric intake. 🍽️\n
+            - Get proper advice from a specialized nutritionist to receive a personalized plan ensuring you gain weight healthily. 🥗👩‍🔬\n
+            -[click for more](https://vegan-dietitian.com/)"
+
+# food alternative
+  utter_dairy_product_alternatives:
+  - text: "Dairy-free alternatives have significantly grown to accommodate different preferences and tastes. These dairy alternatives like Almond milk, Soy milk, and Coconut milk not only cater to lactose-intolerant individuals but also support vegans’ beliefs against using anything taken from animals. Beyond these staples, there are new choices like Cashew Milk, Rice Milk, or Hemp Milk also available.[click for more](https://vegan-dietitian.com/)"
+
+  utter_common_meat_alternatives:
+  - text: "Meat alternatives are widely available and can be a healthful way to get protein and other nutrients without eating meat 🌱. These great options are perfect for those looking to cut it down for health or environmental reasons 🌍. The key to any healthful diet is to choose a variety of nutrient-rich whole foods 🥗 and be sure to include protein, fiber, vitamins, and minerals 🥦.[click for more](https://vegan-dietitian.com/)"
+  utter_vegan_diet_prevent_disease:
+  - text: "Vegan diets are linked to various health benefits 💪, including a lower risk of obesity ⚖️, ischemic heart disease ❤️, type 2 diabetes 🩸, and certain cancers 🎗️. All these benefits have been observed among individuals who followed a strict vegan (abstain from animal food) or vegetarian diet (omission of fish and meat) 🍏.[click for more](https://vegan-dietitian.com/)"
+
+  utter_vegan_diet_lower_diabetes_risk:
+  - text: "Plant-based foods are a large part of a vegan diet 🥬 shown to help in the treatment of chronic disease and are often associated with lower levels of type 2 diabetes 🍎, reduced cancer rates 🎗️, lower cholesterol levels 🍇, and less hypertension 🥑.[click for more](https://vegan-dietitian.com/)"
+
+  utter_vegan_diet_for_PCOS:
+  - text: "A. It has been shown in various studies that plant-based diets can help in losing weight and in turn may reduce symptoms of PCOS/PCOD. On the same note, general inflammation can be lessened using the Alternative Healthy Eating Index hence treating PCOS/PCOD.🌿.[click for more](https://vegan-dietitian.com/)"
+
+  utter_veganism_help_reduce_cardiovascular_disease:
+  - text: "One of the possible reasons might be that fruits 🍏 and vegetables 🥒 are rich in anti-inflammatory nutrients and anti-oxidants that help you to reduce plaque in the arteries 🩺.[click for more](https://vegan-dietitian.com/)"
+
+  utter_vegan_diet_prevent_cancer:
+  - text: "Yes, plant-based foods contain phytochemicals and nutrients that are needed to fight diseases like cancer 🎗️. The plant-based foods are fiber-rich, which can lower the risk of cancer 🥦.[click for more](https://vegan-dietitian.com/)"
+
+  utter_best_diet_for_alzheimers_prevention:
+  - text: "Plant-based diets can benefit the brain 🧠 and help prevent Alzheimer’s disease and other forms of dementia 👵. Dairy products 🥛 and meat should be substituted by fruits 🍇 and vegetables 🥗, legumes 🌱, and whole grains of Vitamin E instead of supplements. Healthy food containing Vitamin E include seeds 🌻, nuts 🌰[click for more](https://vegan-dietitian.com/)"
+
+  utter_best_diet_for_arthritis:
+  - text: "Eat a well-balanced diet to get all the vitamins 💊, minerals 🥕, antioxidants 🍇, and other nutrients you need, including a variety of fruits 🍎 and vegetables 🥒, dairy, nuts 🌰, pulses, protein foods 🥜, cereal 🌾, and grains 🌾. This will help you to maintain general good health and a healthy weight ⚖️.[click for more](https://vegan-dietitian.com/)"
+
+  utter_vegan_diet_benefits_cholesterol_reduction:
+  - text: "Plants are rich in soluble fiber 🥦, which helps lower cholesterol 🍎. Soluble fibers slow the absorption of cholesterol and reduce the amount of cholesterol the liver produces. Oatmeal 🥣, beans 🌱, barley 🌾, and some fruits 🍏 and vegetables 🥒 are all good sources of soluble fibers.[click for more](https://vegan-dietitian.com/)"
+ 
+  utter_best_diet_for_thyroid_problems:
+  - text: "A diet containing fresh, whole foods 🥬, mainly from plant sources like vegetables 🥗, fruits 🍎, legumes 🌱, beans 🌰, nuts 🥜, and whole grains 🌾 that avoid highly processed foods 🍟 can promote a healthy microbiome 🌿.[click for more](https://vegan-dietitian.com/)"
+
+  utter_diet_and_blood_pressure_maintenance:
+  - text: "Changing your lifestyle can help you to control and manage blood pressure ❤️. Potassium in your diet can lessen the impact of salt (sodium) on blood pressure 🧂. The best sources of potassium are foods 🥗 and vegetables 🥒 rather than supplements 💊.[click for more](https://vegan-dietitian.com/)"
+
+  utter_essential_nutrients_from_vegan_diet:
+  - text: "With proper planning 📋 and an understanding of what makes up a healthy, balanced vegan diet, you can get all the nutrients your body needs 🥕. If you do not plan your diet properly, you could miss out on essential nutrients, such as calcium 🥛, iron 🍞, vitamin B12, iodine 🧂, and selenium 🌰.[click for more](https://vegan-dietitian.com/)"
+
+  utter_vegan_nutrient_requirements:
+  - text: "Vegan diets are usually higher in dietary fiber, magnesium, folic acid, vitamins C and E, iron, and phytochemicals, and they tend to be lower in calories, saturated fats, and cholesterol, vitamin D, calcium, zinc, and vitamin B-12.[click for more](https://vegan-dietitian.com/)"
+
+
+# __________________________________________________________________________________________________________________________________________
+  utter_ask_first_name:
+  - text: What is your first name?
+  utter_ask_last_name:
+  - text: What is your last name?
+  utter_ask_phone_number:
+  - text: What is your phone number?
+  utter_ask_email:
+  - text: What is your email address?
+  utter_ask_city:
+  - text: What is your city name?
+  utter_ask_age:
+  - text: What is your age?
+  utter_submit:
+  - text: Ok. Thanks!
+  utter_slots_values:
+  # - text: I will remember that your name is 👤 {first_name} {last_name} , Phoner number is 📞 {phone_number} and Email is ✉️  {email}, your City name is 📍 {city}, and Age is {age}!
+  - text: "Here is your data: \n
+            - Name 👤:   {first_name} {last_name}\n
+            - Phone Number 📞:   {phone_number}\n
+            - Email ✉️:  {email}\n
+            - City📍:   {city}\n
+            - Age :  {age}!"
+  utter_vegan_option:
+    - text: "Hello! Welcome to our food diet service. Please select a category to see available plans."
+      buttons:
+        - title: "Personal"
+          payload: "/product_list"
+        - title: "Family"
+          payload: "/select_family"
+        - title: "Corporate"
+          payload: "/select_corporate"
+
+
+# it is not use for check purpose
+  utter_personal_selected:
+    - text: |
+        Please select a sub-categories to see available plans.
+      buttons:
+        - title: "Human"
+          payload: "/product_list"
+        - title: "Animal"
+          payload: "/product_list"
+        - title: "Other"
+          payload: "/product_list"
+
+  utter_family_selected:
+    - text: |
+        Please select a sub-categories to see available plans.
+      buttons:
+        - title: "2 Member"
+          payload: "/two_member"
+        - title: "4 Member"
+          payload: "/four_member"
+        - title: "6 Member"
+          payload: "/six_member"
+        - title: "6+ Member"
+          payload: "/more_member"
+
+  # utter_corporate_selected:
+  #   - text: |
+  #       Please select a sub-categories to see available plans.
+  #     buttons:
+  #       - title: "Employees Size 1-10"
+  #         payload: "/product_list"
+  #       - title: "Employees Size 1-25"
+  #         payload: "/product_list"
+  #       - title: "Employees Size 1-50"
+  #         payload: "/product_list"
+  #       - title: "Employees Size 50-above"
+  #         payload: "/product_list"
+
+  utter_corporate_selected:
+    - text: |
+        Please select a sub-categories to see available plans.
+      buttons:
+        - title: "Employees Size 1-10"
+          payload: "/employee_one_to_ten"
+        - title: "Employees Size 1-25"
+          payload: "/employee_one_to_twentyfive"
+        - title: "Employees Size 1-50"
+          payload: "/employee_one_to_fifty"
+        - title: "Employees Size 50-above"
+          payload: "/employee_more_than_fifty"
+
+          
+session_config:
+  session_expiration_time: 200
+  carry_over_slots_to_new_session: true
+actions:
+  - utter_greet
+  - actions_list
+
+  - utter_family_selected
+  - utter_personal_selected
+  - utter_corporate_selected
+
+
+  - utter_slots_values
+  - utter_submit
+  - validate_name_form
+  - utter_vegan_option
+  - action_provide_vegan_details
+
+  - action_resources_list
+  - action_hello_world
+  - action_intro_show_video
+  - action_greet_user
+  - action_show_video
+  - action_provide_vegan_sub_details
+  - action_provide_vegan_subcorporate_details
+  - action_submit_validate_name_form
+  # - action_default_fallback
